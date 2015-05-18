@@ -44,8 +44,8 @@ public class OrderFacade {
 	@SuppressWarnings("unchecked")
 	public List<Order> getAllOrders(){
 		try {
-			LinkedList<Order> order  = (LinkedList<Order>) em.createQuery("SELECT cs FROM Customer cs").getResultList();
-			return order;
+			LinkedList<Order> orders  = (LinkedList<Order>) em.createQuery("SELECT cs FROM Customer cs").getResultList();
+			return orders;
 		} catch (Exception e) {
 			return null;
 		}
