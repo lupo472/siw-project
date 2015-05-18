@@ -41,12 +41,13 @@ public class Customer {
 	public Customer(){
     }
     
-    public Customer(String firstName, String lastName, String email, Date dateOfBirth, Date registrationDate){
+    public Customer(String firstName, String lastName, String email, Date dateOfBirth, Date registrationDate, Address address){
     	this.firstName=firstName;
     	this.lastName=lastName;
     	this.email=email;
     	this.dateOfBirth=dateOfBirth;
     	this.registrationDate=registrationDate;
+    	this.address=address;
     }
     
     //Getters & Setters
