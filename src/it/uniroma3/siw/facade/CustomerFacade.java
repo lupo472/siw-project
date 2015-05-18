@@ -48,8 +48,8 @@ public class CustomerFacade {
 	@SuppressWarnings("unchecked")
 	public List<Customer> getAllCustomers(){
 		try {
-			LinkedList<Customer> customer  = (LinkedList<Customer>) em.createQuery("SELECT cs FROM Customer cs").getResultList();
-			return customer;
+			LinkedList<Customer> customers  = (LinkedList<Customer>) em.createQuery("SELECT cs FROM Customer cs").getResultList();
+			return customers;
 		} catch (Exception e) {
 			return null;
 		}
