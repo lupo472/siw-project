@@ -14,6 +14,12 @@
 		<p>
 			<strong>Scegli un operazione</strong>
 		</p>
+		<h:form>
+		<ul>
+		<li><h:commandButton value="Catalogo Prodotti" action="#{productController.listProducts }"/></li>
+		
+		</ul>
+		</h:form>
 	</f:view>
 </body>
 </html>
