@@ -2,7 +2,6 @@ package it.uniroma3.siw.model;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -12,6 +11,12 @@ import javax.persistence.ManyToMany;
 import javax.persistence.NamedQuery;
 import javax.persistence.Column;
 
+/**
+ * Catalogo dei prodotti dell'azienda.
+ * Può essere consultato da clienti non autenticati, ma i clienti che vogliono effettuare gli ordini 
+ * devono essere registrati nella anagrafica dei clienti della azienda: solo i clienti identificati 
+ * e autenticati possono effettuare ordini.
+ */
 	@Entity
 	@NamedQuery(name = "findAllProducts", query = "SELECT p FROM Product p")
 	public class Product {

@@ -25,7 +25,15 @@ public class Order {
 	private Long id;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date creationTime;
+	private Date creationTime;//la data in cui l'ordine è stato aperto dal cliente 
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date closingTime;//la data in cui l'ordine è stato chiuso dal cliente (da quel momento in poi l'ordine non 
+							 //verrà modificato e l'amministrazione può procedere ad evadere l'ordine)
+
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date processingDate; //la data in cui l'ordine è stato evaso (cioè la data in cui i prodotti 
+								//ordinati sono stati prelevati dal magazzino e spediti al cliente)
 
 	@ManyToOne(fetch=FetchType.EAGER)
 	private Customer customer;
@@ -113,6 +121,22 @@ public class Order {
 	public String toString() {
 		return "Order [id=" + id + ", creationTime=" + creationTime.toString()
 				+  "]";
+	}
+
+	public Date getClosingTime() {
+		return closingTime;
+	}
+
+	public void setClosingTime(Date closingTime) {
+		this.closingTime = closingTime;
+	}
+
+	public Date getProcessingDate() {
+		return processingDate;
+	}
+
+	public void setProcessingDate(Date processingDate) {
+		this.processingDate = processingDate;
 	}
 
 
