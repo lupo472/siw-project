@@ -2,7 +2,6 @@ package it.uniroma3.siw.facade;
 
 import it.uniroma3.siw.model.Product;
 
-import java.util.LinkedList;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -53,7 +52,7 @@ public class ProductFacade {
 	@SuppressWarnings("unchecked")
 	public List<Product> getAllProducts() {
 		try {
-			LinkedList<Product> products  = (LinkedList<Product>) em.createQuery("SELECT ps FROM Product ps").getResultList();
+			List<Product> products  = em.createQuery("SELECT ps FROM Product ps").getResultList();
 			return products;
 		} catch (Exception e) {
 			return null;
