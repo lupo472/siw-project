@@ -15,7 +15,7 @@
 	<h1>Prodotti presenti nel catalogo</h1>
 	<h:form>
 	<ol>
-		<c:forEach var="product" items="#{productController.products }">
+		<c:forEach var="product" items="${productController.products }">
 			<li>Nome: <h:commandLink action="#{productController.findProduct}" value="#{product.name}"><f:param name="id" value="#{product.id }"/></h:commandLink></li>
 		</c:forEach>
 	</ol>

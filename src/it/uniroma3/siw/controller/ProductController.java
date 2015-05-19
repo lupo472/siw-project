@@ -1,6 +1,6 @@
 package it.uniroma3.siw.controller;
 
-import java.util.List;
+import java.util.*;
 
 import it.uniroma3.siw.model.*;
 import it.uniroma3.siw.facade.ProductFacade;
