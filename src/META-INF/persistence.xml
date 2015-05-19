@@ -5,12 +5,13 @@
 	<persistence-unit name="unit-siw-project" transaction-type="JTA">
 	<provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
 	<jta-data-source>PostgreSQL Database</jta-data-source>
-		<class>it.uniroma3.db.products.Product</class>
-		<class>it.uniroma3.db.products.Address</class>
-		<class>it.uniroma3.db.products.Customer</class>
-		<class>it.uniroma3.db.products.Order</class>
-		<class>it.uniroma3.db.products.OrderLine</class>
-		<class>it.uniroma3.db.products.Provider</class>
+		<class>it.uniroma3.siw.model.Product</class>
+		<class>it.uniroma3.siw.model.Address</class>
+		<class>it.uniroma3.siw.model.Customer</class>
+		<class>it.uniroma3.siw.model.Order</class>
+		<class>it.uniroma3.siw.model.OrderLine</class>
+		<class>it.uniroma3.siw.model.Provider</class>
+		<class>it.uniroma3.siw.model.Administrator</class>
 		<properties>
   			<property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(SchemaAction=add,ForeignKeys=true)" /> 
 		</properties>
