@@ -2,8 +2,7 @@ package it.uniroma3.siw.facade;
 
 import javax.ejb.Stateless;
 
-import it.uniroma3.siw.model.Customer;
-import it.uniroma3.siw.model.Address;
+import it.uniroma3.siw.model.*;
 
 import java.util.Date;
 import java.util.LinkedList;
@@ -23,9 +22,9 @@ public class CustomerFacade {
 	public CustomerFacade(){
 	}
 	
-	public Customer createCustomer(String firstName, String lastName, String email, Date dateOfBirth, Date registrationDate, Address address){
+	public User createCustomer(String firstName, String lastName, String email, String password, Date dateOfBirth, Date registrationDate, Address address){
 		try {
-			Customer customer = new Customer(firstName,lastName,email,dateOfBirth,registrationDate, address);
+			User customer = new Customer(firstName,lastName,email, password, dateOfBirth,registrationDate, address);
 			em.persist(customer);
 			return customer;
 		} catch (Exception e) {
@@ -34,10 +33,21 @@ public class CustomerFacade {
 		
 	}
 	
-	public Customer getCustomer(Long id){
+	public User getCustomer(Long id){
 		try {
 			String stringa_query = "SELECT c FROM Customer c WHERE c.id = :id";
-			Customer customer = (Customer)(em.createQuery(stringa_query).setParameter("id", id).getResultList().get(1));
+			User customer = (Customer)(em.createQuery(stringa_query).setParameter("id", id).getResultList().get(1));
+			return customer;
+		} 
+		catch (Exception e) {
+			return null;
+		}
+	}
+	
+	public User getCustomer(String email){
+		try {
+			String stringa_query = "SELECT c FROM Customer c WHERE c.email = :email";
+			User customer = (Customer)(em.createQuery(stringa_query).setParameter("email", email).getResultList().get(1));
 			return customer;
 		} 
 		catch (Exception e) {
@@ -46,25 +56,26 @@ public class CustomerFacade {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<Customer> getAllCustomers(){
+	public List<User> getAllCustomers(){
 		try {
-			LinkedList<Customer> customers  = (LinkedList<Customer>) em.createQuery("SELECT cs FROM Customer cs").getResultList();
+			LinkedList<User> customers  = (LinkedList<User>) em.createQuery("SELECT cs FROM Customer cs").getResultList();
 			return customers;
 		} catch (Exception e) {
 			return null;
 		}
 	}
 	
-	public void updateCustomer(Customer customer){
+	public void updateCustomer(User customer){
 		em.merge(customer);
 	}
 	
-	public void deleteCustomer(Customer customer){
+	public void deleteCustomer(User customer){
 		em.remove(customer);
 	}
 	
 	public void deleteCustomer(Long id){
-		Customer customer = em.find(Customer.class, id);
+		User customer = em.find(Customer.class, id);
 		deleteCustomer(customer);
 	}
+	
 }
