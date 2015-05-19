@@ -19,6 +19,7 @@
 			<li>Nome: <h:commandLink action="#{productController.findProduct}" value="#{product.name}"><f:param name="id" value="#{product.id }"/></h:commandLink></li>
 		</c:forEach>
 	</ol>
+	<!-- Mancano i bottoni torna alla HOME -->
 	</h:form>
 </f:view>
 </body>
