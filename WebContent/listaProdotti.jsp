@@ -13,16 +13,14 @@
 <body>
 <f:view>
 	<h1>Prodotti presenti nel catalogo</h1>
+	<h:form>
 	<ol>
-		<c:forEach var="prodotto_corrente" items="#{productController.products }">
-			<li>Nome: ${prodotto_corrente.name} - Prezzo: ${prodotto_corrente.price } - Codice: ${prodotto_corrente.code}</li>
+		<c:forEach var="product" items="#{productController.products }">
+			<li>Nome: <h:commandLink action="#{productController.findProduct}" value="#{product.name}"><f:param name="id" value="#{product.id }"/></h:commandLink></li>
 		</c:forEach>
 	</ol>
-	<form action="nuovoProdotto.jsp">
-		<input name="bottone_nuovo_prodotto" type="submit"
-			value="Torna all'inserimento">
-	</form>
-
+	<!-- Mancano i bottoni torna alla HOME -->
+	</h:form>
 </f:view>
 </body>
 </html>

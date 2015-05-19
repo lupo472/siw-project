@@ -38,10 +38,17 @@ public class ProductController{
 		return "listaProdotti";
 	}
 	
-	public String retrieveProduct(){
+	public String findProduct(){
 		this.product = product_facade.getProduct(id);
 		return "mostraProdotto";
 	}
+	
+	
+	public String findProduct(Long id) {
+		this.product = product_facade.getProduct(id);
+		return "product";
+	}
+	
 	public String getName() {
 		return name;
 	}

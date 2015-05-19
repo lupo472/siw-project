@@ -14,7 +14,7 @@ import javax.persistence.PersistenceContext;
 
 @Stateless(name="orderFacade")
 public class OrderFacade {
-	@PersistenceContext(unitName="unit-jee-es")//da ora in poi ci pensa l'application server a gestire la creazione e chiusura
+	@PersistenceContext(unitName="unit-siw-project")//da ora in poi ci pensa l'application server a gestire la creazione e chiusura
 	private EntityManager em;
 	
 	public OrderFacade(){

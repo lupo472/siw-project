@@ -12,7 +12,7 @@ import javax.persistence.PersistenceContext;
 @Stateless(name="orderLineFacade")
 public class OrderLineFacade {
 	
-	@PersistenceContext(unitName="unit-jee-es")//da ora in poi ci pensa l'application server a gestire la creazione e chiusura
+	@PersistenceContext(unitName="unit-siw-project")//da ora in poi ci pensa l'application server a gestire la creazione e chiusura
 	private EntityManager em;
 	
 	public OrderLineFacade(){
