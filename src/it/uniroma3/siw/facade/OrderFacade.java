@@ -1,16 +1,15 @@
 package it.uniroma3.siw.facade;
 
 
-import it.uniroma3.siw.model.Order;
-
+import it.uniroma3.siw.model.*;
 
 import java.util.Date;
-import java.util.LinkedList;
 import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 @Stateless(name="orderFacade")
 public class OrderFacade {
@@ -20,9 +19,11 @@ public class OrderFacade {
 	public OrderFacade(){
 	}
 	
-	public Order createOrder(Date creationTime, Long id){
+	public Order createOrder(Customer customer, List<OrderLine> orderlines, Date creationTime, Date closingTime){
 		try {
-			Order order = new Order(creationTime, id);
+			Order order = new Order(creationTime, customer);
+			order.setClosingTime(closingTime);
+			order.setOrderlines(orderlines);
 			em.persist(order);
 			return order;
 		} catch (Exception e) {
@@ -31,9 +32,10 @@ public class OrderFacade {
 	}
 	
 	public Order getOrder(Long id){
+		Query query = this.em.createQuery("SELECT o FROM Order o WHERE o.id = :id");
+		query.setParameter("id", id);
 		try {
-			String stringa_query = "SELECT o FROM Order o WHERE o.id = :id";
-			Order order = (Order)(em.createQuery(stringa_query).setParameter("id", id).getResultList().get(1));
+			Order order = (Order)query.getSingleResult();
 			return order;
 		} 
 		catch (Exception e) {
@@ -43,8 +45,9 @@ public class OrderFacade {
 	
 	@SuppressWarnings("unchecked")
 	public List<Order> getAllOrders(){
+		Query query = this.em.createQuery("SELECT cs FROM Customer cs");
 		try {
-			LinkedList<Order> orders  = (LinkedList<Order>) em.createQuery("SELECT cs FROM Customer cs").getResultList();
+			List<Order> orders  = query.getResultList();
 			return orders;
 		} catch (Exception e) {
 			return null;

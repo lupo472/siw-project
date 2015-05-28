@@ -21,12 +21,20 @@ public class OrderController {
 	
 	private Date creationTime;
 	
+	private Date closingTime;
+	
+	private Date processingDate;
+	
+	private Customer customer;
+	
 	private Order order;
 	
 	private List<Order> orders;
 	
+	private List<OrderLine> orderlines;
+	
 	public String createOrder() {
-		this.order = order_facade.createOrder(creationTime, id);
+		this.order = order_facade.createOrder(customer, orderlines, creationTime, closingTime);
 		return "mostraOrdine";
 	}
 	
