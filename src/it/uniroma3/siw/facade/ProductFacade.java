@@ -7,6 +7,8 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import javax.persistence.criteria.CriteriaQuery;
 
 @Stateless
 public class ProductFacade {
@@ -40,9 +42,10 @@ public class ProductFacade {
 
 	 */
 	public Product getProduct(Long id) {
+		Query stringa_query = this.em.createQuery("SELECT p FROM Product p WHERE p.id = :id");
+		stringa_query.setParameter("id", id);
 		try {
-			String stringa_query = "SELECT p FROM Product p WHERE p.id = :id";
-			Product product = (Product)(em.createQuery(stringa_query).setParameter("id", id).getResultList().get(1));
+			Product product = (Product)stringa_query.getSingleResult();//se rompe cambia in getResultList
 			return product;
 		} catch (Exception e) {
 			return null;
@@ -51,13 +54,22 @@ public class ProductFacade {
 
 	@SuppressWarnings("unchecked")
 	public List<Product> getAllProducts() {
+		Query query = this.em.createQuery("SELECT ps FROM Product ps");
 		try {
-			List<Product> products  = em.createQuery("SELECT ps FROM Product ps").getResultList();
+			List<Product> products  = query.getResultList();
 			return products;
 		} catch (Exception e) {
 			return null;
 		}
 	}
+	
+//	public List<Product> getAllProducts() {
+//        CriteriaQuery<Product> cq = em.getCriteriaBuilder().createQuery(Product.class);
+//        cq.select(cq.from(Product.class));
+//        List<Product> products = em.createQuery(cq).getResultList();
+//		return products;
+//	}
+//	
 
 	public void updateProduct(Product product) {
 		em.merge(product);	

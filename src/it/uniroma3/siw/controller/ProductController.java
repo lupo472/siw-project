@@ -101,4 +101,8 @@ public class ProductController{
 		this.id = id;
 	}
 	
+	public void setProducts(List<Product> products) {
+		this.products = products;
+	}
+	
 }
