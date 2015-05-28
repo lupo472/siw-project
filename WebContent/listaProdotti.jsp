@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
 <%@ taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
@@ -11,16 +9,20 @@
 <title>Catalogo Prodotti</title>
 </head>
 <body>
-<f:view>
-	<h1>Prodotti presenti nel catalogo</h1>
-	<h:form>
-	<ol>
-		<c:forEach var="product" items="${productController.products }">
-			<li>Nome: <h:commandLink action="#{productController.findProduct}" value="#{product.name}"><f:param name="id" value="#{product.id }"/></h:commandLink></li>
-		</c:forEach>
-	</ol>
-	<!-- Mancano i bottoni torna alla HOME -->
-	</h:form>
-</f:view>
+	<f:view>
+		<h1>Prodotti presenti nel catalogo</h1>
+		<h:form>
+			<ol>
+				<c:forEach var="product" items="#{productController.products }">
+					<li>Nome: <h:commandLink
+							action="#{productController.findProduct}" value="#{product.name}">
+							<f:param name="id" value="#{product.id }" />
+						</h:commandLink> - Prezzo: ${product.price }
+					</li>
+				</c:forEach>
+			</ol>
+			<!-- Mancano i bottoni torna alla HOME -->
+		</h:form>
+	</f:view>
 </body>
 </html>

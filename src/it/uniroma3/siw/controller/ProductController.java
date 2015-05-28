@@ -46,7 +46,7 @@ public class ProductController{
 	
 	public String findProduct(Long id) {
 		this.product = product_facade.getProduct(id);
-		return "product";
+		return "mostraProdotto";
 	}
 	
 	public String getName() {
