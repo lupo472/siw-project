@@ -25,7 +25,6 @@ public class AdministratorFacade {
 		} catch (Exception e) {
 			return null;
 		}
-		
 	}
 	
 	public User getAdministrator(Long id){

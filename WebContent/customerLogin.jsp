@@ -19,6 +19,7 @@
     <div>Password: <h:inputText value="#{customerController.password}" 
                      required="true"
                      requiredMessage="Password obbligatoria"
+                     
                      id="password"/> <h:message for="password" />
 	</div>
 		<div>

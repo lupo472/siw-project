@@ -9,8 +9,10 @@
 <body>
 <body>
 	<f:view>
-		<h1>Customer Home</h1> 
-		<div>${ customerController.firstName }</div> <div>${ customerController.lastName }</div>
+		<h1>Benvenuto!</h1> 
+		<div>${ customerController.firstName }</div> 
+		<div>${ customerController.lastName }</div>
+		<div>${ customerController.address }</div>
 		<p>
 			<strong>Scegli un operazione</strong>
 		</p>

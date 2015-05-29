@@ -29,25 +29,46 @@
                      <h:message for="dateOfBirth" />
 					 </h:inputText>
 	</div>
-    <div>Indirizzo: <h:inputText value="#{customerController.address}" 
+    <div>Password: <h:inputSecret value="#{customerController.password}" 
                      required="true"
-                     requiredMessage="Indirizzo obbligatorio"
-                     id="address"/> <h:message for="address" />
+                     requiredMessage="Password obbligatoria"
+                     id="password"/> <h:message for="password" />
+	</div>
+	<div>Dati indirizzo:</div>
+    <div>Via: <h:inputText value="#{addressController.street}" 
+                     required="true"
+                     requiredMessage="Via obbligatoria"
+                     id="street"/> <h:message for="street" />
+	</div>
+	<div>Citta': <h:inputText value="#{addressController.city}" 
+                     required="true"
+                     requiredMessage="Citta' obbligatoria"
+                     id="city"/> <h:message for="city" />
+	</div>
+	<div>Stato/Regione : <h:inputText value="#{addressController.state}" 
+                     required="true"
+                     requiredMessage="Stato obbligatorio"
+                     id="state"/> <h:message for="state" />
+	</div>
+	<div>Paese : <h:inputText value="#{addressController.country}" 
+                     required="true"
+                     requiredMessage="Paese obbligatorio"
+                     id="country"/> <h:message for="country" />
+	</div>
+	<div>ZipCode : <h:inputText value="#{addressController.zipCode}" 
+                     required="true"
+                     requiredMessage="Zipcode obbligatorio"
+                     id="zipCode"/> <h:message for="zipCode" />
 	</div>
     <div>Email: <h:inputText value="#{customerController.email}" 
                      required="true"
                      requiredMessage="Email obbligatoria"
                      id="email"/> <h:message for="email" />
 	</div>
-
-    <div>Password: <h:inputText value="#{customerController.password}" 
-                     required="true"
-                     requiredMessage="Password obbligatoria"
-                     id="password"/> <h:message for="password" />
-	</div>
 		<div>
-			<h:commandButton value="Submit"
-				action="#{customerController.createCustomer}" />
+			<h:commandButton value="Submit" action="#{customerController.createCustomer}">
+			<f:setPropertyActionListener value="addressController" target="CustomerController.addressController"/>
+			</h:commandButton>
 		</div>
 	</h:form>
 	</f:view>

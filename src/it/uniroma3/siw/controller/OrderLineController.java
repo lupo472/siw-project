@@ -3,7 +3,7 @@ package it.uniroma3.siw.controller;
 import java.util.List;
 
 import it.uniroma3.siw.facade.OrderLineFacade;
-import it.uniroma3.siw.model.OrderLine;
+import it.uniroma3.siw.model.*;
 
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
@@ -27,8 +27,10 @@ public class OrderLineController {
 	
 	private List<OrderLine> orderLines;
 	
+	private Product product;
+	
 	public String createOrderLine() {
-		this.orderLine = orderLine_facade.createOrderLine(unitPrice, quantity);
+		this.orderLine = orderLine_facade.createOrderLine(unitPrice, quantity, product);
 		return "mostraLineaOrdine";
 	}
 	

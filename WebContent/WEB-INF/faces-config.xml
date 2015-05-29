@@ -4,5 +4,21 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
     version="2.2">
+    
+	<managed-bean>
+	    <managed-bean-name>addressController</managed-bean-name>
+	    <managed-bean-class>it.uniroma3.siw.controller.AddressController</managed-bean-class>
+	    <managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
+	    <managed-bean-name>customerController</managed-bean-name>
+	    <managed-bean-class>it.uniroma3.siw.controller.CustomerController</managed-bean-class>
+	    <managed-bean-scope>request</managed-bean-scope>
+	    <managed-property>
+	     <property-name>addressController</property-name>
+	     <value>#{addressController}</value>
+	    </managed-property>
+	</managed-bean>
 
 </faces-config>
