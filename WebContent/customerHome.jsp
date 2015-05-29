@@ -11,14 +11,15 @@
 <body>
 <body>
 	<f:view>
-		<h1>Benvenuto</h1> <div> <h:inputText value="#{ customerController.firstName }" /></div> <div> <h:inputText value="#{ customerController.lastName }" /></div>
+		<h1>Customer Home</h1> 
+		<div>${ customerController.firstName }</div> <div>${ customerController.lastName }</div>
 		<p>
 			<strong>Scegli un operazione</strong>
 		</p>
 		<h:form>
 		<ul>
 		<li><h:commandButton value="Catalogo Prodotti" action="#{ productController.listProducts }"/></li>
-		
+
 		</ul>
 		</h:form>
 	</f:view>
