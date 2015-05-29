@@ -67,7 +67,7 @@
 	</div>
 		<div>
 			<h:commandButton value="Submit" action="#{customerController.createCustomer}">
-			<f:setPropertyActionListener value="addressController" target="CustomerController.addressController"/>
+			<f:setPropertyActionListener value="addressController" target="CustomerController."/>
 			</h:commandButton>
 		</div>
 	</h:form>
