@@ -44,9 +44,9 @@ public class Order {
 	public Order(){
 	}
 
-	public Order(Date creationTime,Long id){
+	public Order(Date creationTime,Customer customer){
 		this.creationTime=creationTime;
-		this.id=id;
+		this.customer=customer;
 	}
 
 	//Getters & Setters

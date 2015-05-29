@@ -1,6 +1,6 @@
 package it.uniroma3.siw.facade;
 
-import java.util.LinkedList;
+
 import java.util.List;
 
 import it.uniroma3.siw.model.*;
@@ -8,6 +8,7 @@ import it.uniroma3.siw.model.*;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 @Stateless(name="orderLineFacade")
 public class OrderLineFacade {
@@ -18,9 +19,10 @@ public class OrderLineFacade {
 	public OrderLineFacade(){
 	}
 	
-	public OrderLine createOrderLine(Float unitPrice, Integer quantity){
+	public OrderLine createOrderLine(Float unitPrice, Integer quantity, Product product){
 		try {
 			OrderLine orderLine = new OrderLine(unitPrice, quantity);
+			orderLine.setProduct(product);
 			em.persist(orderLine);
 			return orderLine;
 		} catch (Exception e) {
@@ -29,9 +31,10 @@ public class OrderLineFacade {
 	}
 	
 	public OrderLine getOrderLine(Long id){
+		Query query = this.em.createQuery("SELECT ol FROM OrderLine ol WHERE ol.id = :id");
+		query.setParameter("id", id);
 		try {
-			String stringa_query = "SELECT ol FROM OrderLine ol WHERE ol.id = :id";
-			OrderLine orderLine = (OrderLine)(em.createQuery(stringa_query).setParameter("id", id).getResultList().get(1));
+			OrderLine orderLine = (OrderLine)query.getSingleResult();
 			return orderLine;
 		} 
 		catch (Exception e) {
@@ -41,8 +44,9 @@ public class OrderLineFacade {
 	
 	@SuppressWarnings("unchecked")
 	public List<OrderLine> getAllOrderLines(){
+		Query query = this.em.createQuery("SELECT cs FROM Customer cs");
 		try {
-			LinkedList<OrderLine> orderLines  = (LinkedList<OrderLine>) em.createQuery("SELECT cs FROM Customer cs").getResultList();
+			List<OrderLine> orderLines  = query.getResultList();
 			return orderLines;
 		} catch (Exception e) {
 			return null;
