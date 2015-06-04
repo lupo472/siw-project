@@ -8,7 +8,6 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import javax.persistence.criteria.CriteriaQuery;
 
 @Stateless
 public class ProductFacade {
@@ -48,6 +47,17 @@ public class ProductFacade {
 			Product product = (Product)stringa_query.getSingleResult();//se rompe cambia in getResultList
 			return product;
 		} catch (Exception e) {
+			return null;
+		}
+	}
+	
+	public Product getProduct(String code){
+		Query query = this.em.createQuery("SELECT p FROM Product p WHERE p.code = :code");
+		query.setParameter("code",code);
+		try{
+			Product product = (Product)query.getSingleResult();
+			return product;
+		} catch (Exception e){
 			return null;
 		}
 	}

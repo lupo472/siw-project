@@ -7,17 +7,21 @@ import it.uniroma3.siw.model.*;
 
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.SessionScoped;
 import javax.persistence.Column;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @ManagedBean
+@SessionScoped
 public class CustomerController extends UserController{
 	@EJB
 	private CustomerFacade customer_facade;
     
     private User customer;
     
+    @ManagedProperty(value="#{param.id}")
     private Long id;
 
     private String firstName;
@@ -31,13 +35,23 @@ public class CustomerController extends UserController{
     private Address address;
     
 	public String createCustomer(){
-		this.customer = customer_facade.createCustomer(firstName, lastName, email, password, dateOfBirth, registrationDate, address);
+		this.customer = (Customer)customer_facade.createCustomer(firstName, lastName, email, password, dateOfBirth, registrationDate, address);
 		return "customerHome";
 	}
 	
 	public String retrieveCustomer(){
 		this.customer = customer_facade.getCustomer(getId());
 		return "customerHome";
+	}
+	
+	public String customerLogin(){
+		User found = customer_facade.getCustomer(getEmail());
+		if(found!=null){
+			if(this.getPassword().equals(found.getPassword())){
+				return "customerHome";
+			}
+		}
+		return "customerLogin";
 	}
 
 	public User getCustomer() {
@@ -112,13 +126,4 @@ public class CustomerController extends UserController{
 		this.address = address;
 	}
 
-	public String customerLogin(){
-		User found = customer_facade.getCustomer(getEmail());
-		if(found!=null){
-			if(getPassword().equals(found.getPassword())){
-				return "customerHome";
-			}
-		}
-		return "customerLogin";
-	}
 }

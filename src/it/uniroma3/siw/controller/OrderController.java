@@ -9,15 +9,22 @@ import it.uniroma3.siw.facade.*;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.RequestScoped;
 
 @ManagedBean
+@RequestScoped
 public class OrderController {
 	@EJB
 	private OrderFacade order_facade;
 	
 	@ManagedProperty(value="#{param.id}")
 	private Long id;
+	
+	@ManagedProperty(value="#{orderLineController}")
+	private OrderLineController orderLineController;
+	
+	@ManagedProperty(value="#{customerController}")
+	private CustomerController customerController;
 	
 	private Date creationTime;
 	
@@ -34,7 +41,12 @@ public class OrderController {
 	private List<OrderLine> orderlines;
 	
 	public String createOrder() {
+		this.orderlines = this.orderLineController.getOrderLines();
+		this.customer = (Customer)this.customerController.getCustomer();
+		this.closingTime = new Date();
+		//manca come fare il CreationTime
 		this.order = order_facade.createOrder(customer, orderlines, creationTime, closingTime);
+		
 		return "mostraOrdine";
 	}
 	
@@ -74,6 +86,50 @@ public class OrderController {
 
 	public void setOrder(Order order) {
 		this.order = order;
+	}
+
+	public OrderLineController getOrderLineController() {
+		return orderLineController;
+	}
+
+	public void setOrderLineController(OrderLineController orderLineController) {
+		this.orderLineController = orderLineController;
+	}
+
+	public Date getClosingTime() {
+		return closingTime;
+	}
+
+	public void setClosingTime(Date closingTime) {
+		this.closingTime = closingTime;
+	}
+
+	public Date getProcessingDate() {
+		return processingDate;
+	}
+
+	public void setProcessingDate(Date processingDate) {
+		this.processingDate = processingDate;
+	}
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+
+	public List<OrderLine> getOrderlines() {
+		return orderlines;
+	}
+
+	public void setOrderlines(List<OrderLine> orderlines) {
+		this.orderlines = orderlines;
+	}
+
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
 	}
 	
 	
