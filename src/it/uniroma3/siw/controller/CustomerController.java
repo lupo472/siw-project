@@ -2,20 +2,22 @@ package it.uniroma3.siw.controller;
 
 import java.util.Date;
 
-import it.uniroma3.siw.facade.CustomerFacade;
+import it.uniroma3.siw.facade.*;
 import it.uniroma3.siw.model.*;
 
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
-import javax.persistence.Column;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+
 
 @ManagedBean
 @SessionScoped
-public class CustomerController extends UserController{
+public class CustomerController{
+	
+	@ManagedProperty(value="#{addressController}")
+	private AddressController addressController;
+	
 	@EJB
 	private CustomerFacade customer_facade;
     
@@ -32,10 +34,12 @@ public class CustomerController extends UserController{
 
     private Date dateOfBirth;
     private Date registrationDate;
+
     private Address address;
     
 	public String createCustomer(){
 		this.customer = (Customer)customer_facade.createCustomer(firstName, lastName, email, password, dateOfBirth, registrationDate, address);
+
 		return "customerHome";
 	}
 	
@@ -125,5 +129,12 @@ public class CustomerController extends UserController{
 	public void setAddress(Address address) {
 		this.address = address;
 	}
+	
+	public AddressController getAddressController() {
+		return addressController;
+	}
 
+	public void setAddressController(AddressController addressController) {
+		this.addressController = addressController;
+	}
 }
