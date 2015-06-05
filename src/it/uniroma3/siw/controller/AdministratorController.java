@@ -4,8 +4,7 @@ package it.uniroma3.siw.controller;
 import java.util.Date;
 
 import it.uniroma3.siw.facade.*;
-import it.uniroma3.siw.model.Address;
-import it.uniroma3.siw.model.User;
+import it.uniroma3.siw.model.*;
 
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
@@ -15,7 +14,7 @@ public class AdministratorController{
 	@EJB
 	private AdministratorFacade administrator_facade;
 
-    private User administrator;
+    private Administrator administrator;
     
     private Long id;
 
@@ -40,11 +39,11 @@ public class AdministratorController{
 		return "mostraAmministratore";
 	}
 
-	public User getAdministrator() {
+	public Administrator getAdministrator() {
 		return administrator;
 	}
 
-	public void setAdministrator(User administrator) {
+	public void setAdministrator(Administrator administrator) {
 		this.administrator = administrator;
 	}
 	
@@ -113,7 +112,7 @@ public class AdministratorController{
 	}
 
 	public String AdministratorLogin(){
-		User found = administrator_facade.getAdministrator(id);
+		Administrator found = administrator_facade.getAdministrator(id);
 		if(found!=null){
 			if(password.equals(found.getPassword())){
 				return "administratorHome";

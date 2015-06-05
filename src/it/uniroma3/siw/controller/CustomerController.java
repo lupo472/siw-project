@@ -21,7 +21,7 @@ public class CustomerController{
 	@EJB
 	private CustomerFacade customer_facade;
     
-    private User customer;
+    private Customer customer;
     
     @ManagedProperty(value="#{param.id}")
     private Long id;
@@ -38,7 +38,7 @@ public class CustomerController{
     private Address address;
     
 	public String createCustomer(){
-		this.customer = (Customer)customer_facade.createCustomer(firstName, lastName, email, password, dateOfBirth, registrationDate, address);
+		this.customer = customer_facade.createCustomer(firstName, lastName, email, password, dateOfBirth, registrationDate, address);
 
 		return "customerHome";
 	}
@@ -49,7 +49,7 @@ public class CustomerController{
 	}
 	
 	public String customerLogin(){
-		User found = customer_facade.getCustomer(getEmail());
+		Customer found = customer_facade.getCustomer(getEmail());
 		if(found!=null){
 			if(this.getPassword().equals(found.getPassword())){
 				return "customerHome";
@@ -58,11 +58,11 @@ public class CustomerController{
 		return "customerLogin";
 	}
 
-	public User getCustomer() {
+	public Customer getCustomer() {
 		return customer;
 	}
 
-	public void setCustomer(User customer) {
+	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
 	

@@ -5,12 +5,11 @@ import javax.ejb.Stateless;
 import it.uniroma3.siw.model.*;
 
 import java.util.Date;
-import java.util.LinkedList;
 import java.util.List;
 
-import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 @Stateless(name="customerFacade")
 public class CustomerFacade {
@@ -22,9 +21,9 @@ public class CustomerFacade {
 	public CustomerFacade(){
 	}
 	
-	public User createCustomer(String firstName, String lastName, String email, String password, Date dateOfBirth, Date registrationDate, Address address){
+	public Customer createCustomer(String firstName, String lastName, String email, String password, Date dateOfBirth, Date registrationDate, Address address){
 		try {
-			User customer = new Customer(firstName,lastName,email, password, dateOfBirth,registrationDate, address);
+			Customer customer = new Customer(firstName,lastName,email, password, dateOfBirth,registrationDate, address);
 			em.persist(customer);
 			return customer;
 		} catch (Exception e) {
@@ -33,48 +32,49 @@ public class CustomerFacade {
 		
 	}
 	
-	public User getCustomer(Long id){
-		try {
-			String stringa_query = "SELECT c FROM Customer c WHERE c.id = :id";
-			User customer = (Customer)(em.createQuery(stringa_query).setParameter("id", id).getResultList().get(1));
+	public Customer getCustomer(Long id){
+		Query query = this.em.createQuery("SELECT c FROM Customer c WHERE c.id = :id");
+		query.setParameter("id",id);
+		try{
+			Customer customer = (Customer)query.getSingleResult();
 			return customer;
-		} 
-		catch (Exception e) {
+		} catch (Exception e){
 			return null;
 		}
 	}
 	
-	public User getCustomer(String email){
-		try {
-			String stringa_query = "SELECT c FROM Customer c WHERE c.email = :email";
-			User customer = (Customer)(em.createQuery(stringa_query).setParameter("email", email).getResultList().get(1));
+	public Customer getCustomer(String email){
+		Query query = this.em.createQuery("SELECT c FROM Customer c WHERE c.email = :email");
+		query.setParameter("email",email);
+		try{
+			Customer customer = (Customer)query.getSingleResult();
 			return customer;
-		} 
-		catch (Exception e) {
+		} catch (Exception e){
 			return null;
 		}
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<User> getAllCustomers(){
+	public List<Customer> getAllCustomers(){
+		Query query = this.em.createQuery("SELECT cs FROM Customer cs");
 		try {
-			LinkedList<User> customers  = (LinkedList<User>) em.createQuery("SELECT cs FROM Customer cs").getResultList();
+			List<Customer> customers  = query.getResultList();
 			return customers;
 		} catch (Exception e) {
 			return null;
 		}
 	}
 	
-	public void updateCustomer(User customer){
+	public void updateCustomer(Customer customer){
 		em.merge(customer);
 	}
 	
-	public void deleteCustomer(User customer){
+	public void deleteCustomer(Customer customer){
 		em.remove(customer);
 	}
 	
 	public void deleteCustomer(Long id){
-		User customer = em.find(Customer.class, id);
+		Customer customer = em.find(Customer.class, id);
 		deleteCustomer(customer);
 	}
 	
