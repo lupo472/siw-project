@@ -8,14 +8,18 @@ import it.uniroma3.siw.model.*;
 
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.SessionScoped;
 
 @ManagedBean
+@SessionScoped
 public class AdministratorController{
 	@EJB
 	private AdministratorFacade administrator_facade;
 
     private Administrator administrator;
     
+    @ManagedProperty(value="#{param.id}")
     private Long id;
 
     private String firstName;

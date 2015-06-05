@@ -5,12 +5,14 @@ import it.uniroma3.siw.model.*;
 import java.util.Date;
 import java.util.List;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+@Stateless(name="administratorFacade")
 public class AdministratorFacade {
-	@PersistenceContext(unitName="unit-jee-es")//da ora in poi ci pensa l'application server a gestire la creazione e chiusura
+	@PersistenceContext(unitName="unit-siw-project")//da ora in poi ci pensa l'application server a gestire la creazione e chiusura
 	private EntityManager em;
 	
 	//costruttore vuoto;

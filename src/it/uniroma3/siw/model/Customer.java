@@ -11,7 +11,6 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
@@ -19,7 +18,6 @@ import javax.persistence.TemporalType;
 
 
 @Entity
-@NamedQuery(name = "ricercaOrdini", query = "SELECT a FROM Order a WHERE a.customer.id = :id")
 public class Customer{
 
 	@Id
