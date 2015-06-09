@@ -15,8 +15,9 @@
 		</p>
 		<h:form>
 		<ul>
-		<!-- <li><a href="customerLogin.jsp" >Login</a></li>
-		<li><h:commandLink value="Registrati" action="customerSignUp.jsp"/></li>-->
+		 <li><h:commandButton value="Login" action="#{customerController.customerLogin }" /></li>
+		 
+		<li><h:commandButton value="Registrati" action="#{customerSignUPController.signUp}"/></li>
 		<li><h:commandButton value="Catalogo Prodotti" action="#{productController.listProducts}"/></li>
 		</ul>
 		</h:form>

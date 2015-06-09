@@ -6,12 +6,12 @@
 	<provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
 	<jta-data-source>PostgreSQL Database</jta-data-source>
 		<class>it.uniroma3.siw.model.Product</class>
-		<!--<class>it.uniroma3.siw.model.Address</class>
+		<class>it.uniroma3.siw.model.Address</class>
 		<class>it.uniroma3.siw.model.Customer</class>
 		<class>it.uniroma3.siw.model.Order</class>
 		<class>it.uniroma3.siw.model.OrderLine</class>
 		<class>it.uniroma3.siw.model.Provider</class>
-		<class>it.uniroma3.siw.model.Administrator</class>-->
+		<class>it.uniroma3.siw.model.Administrator</class>
 		<properties>
   			<property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(SchemaAction=add,ForeignKeys=true)" />
   			<property name="openjpa.RuntimeUnenhancedClasses" value="supported"/>

@@ -14,45 +14,40 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean
 @SessionScoped
 public class CustomerController{
-	
+
 	@EJB
 	private CustomerFacade customer_facade;
-    
-    private Customer customer;
-    
-    @ManagedProperty(value="#{param.id}")
-    private Long id;
 
-    private String firstName;
+	private Customer customer;
 
-    private String lastName;
-    private String email;
-    private String password;
+//	@ManagedProperty(value="#{param.id}")
+//	private Long id;
 
-    private Date dateOfBirth;
-    private Date registrationDate;
+	private String firstName;
 
-    private Address address;
-    
-	public String createCustomer(){
-		this.customer = customer_facade.createCustomer(firstName, lastName, email, password, dateOfBirth, registrationDate, address);
+	private String lastName;
+	private String email;
+	private String password;
 
-		return "customerHome";
-	}
-	
-	public String retrieveCustomer(){
-		this.customer = customer_facade.getCustomer(getId());
-		return "customerHome";
-	}
-	
+	private Date dateOfBirth;
+	private Date registrationDate;
+	private Address address;
+
+
+//	public String retrieveCustomer(){
+//		this.customer = customer_facade.getCustomer(getId());
+//		return "customerHome";
+//	}
+
 	public String customerLogin(){
-		Customer found = customer_facade.getCustomer(getEmail());
-		if(found!=null){
-			if(this.getPassword().equals(found.getPassword())){
-				return "customerHome";
-			}
+		try {
+			Customer found = customer_facade.getCustomer(getEmail());
+				if(this.getPassword().equals(found.getPassword()))
+					return "customerHome";
+				return "customerLogin";
+		} catch (NullPointerException e) {
+			return "customerLogin";
 		}
-		return "customerLogin";
 	}
 
 	public Customer getCustomer() {
@@ -62,14 +57,14 @@ public class CustomerController{
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
-	
-	public Long getId() {
-		return id;
-	}
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+//	public Long getId() {
+//		return id;
+//	}
+//
+//	public void setId(Long id) {
+//		this.id = id;
+//	}
 
 	public String getFirstName() {
 		return firstName;
