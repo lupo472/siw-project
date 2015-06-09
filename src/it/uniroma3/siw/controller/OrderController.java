@@ -9,22 +9,16 @@ import it.uniroma3.siw.facade.*;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 
 @ManagedBean
-@RequestScoped
+@SessionScoped
 public class OrderController {
 	@EJB
 	private OrderFacade order_facade;
 	
 	@ManagedProperty(value="#{param.id}")
 	private Long id;
-	
-	@ManagedProperty(value="#{orderLineController}")
-	private OrderLineController orderLineController;
-	
-	@ManagedProperty(value="#{customerController}")
-	private CustomerController customerController;
 	
 	private Date creationTime;
 	
@@ -41,13 +35,13 @@ public class OrderController {
 	private List<OrderLine> orderlines;
 	
 	public String createOrder() {
-		this.orderlines = this.orderLineController.getOrderLines();
-		this.customer = (Customer)this.customerController.getCustomer();
-		this.closingTime = new Date();
-		//manca come fare il CreationTime
-		this.order = order_facade.createOrder(customer, orderlines, creationTime, closingTime);
-		
-		return "mostraOrdine";
+//		this.orderlines = this.orderLineController.getOrderLines();
+//		this.customer = (Customer)this.customerController.getCustomer();
+//		this.closingTime = new Date();
+//		//manca come fare il CreationTime
+//		this.order = order_facade.createOrder(customer, orderlines, creationTime, closingTime);
+//		
+//		return "mostraOrdine";
 	}
 	
 	public String listOrders(){
@@ -88,14 +82,6 @@ public class OrderController {
 		this.order = order;
 	}
 
-	public OrderLineController getOrderLineController() {
-		return orderLineController;
-	}
-
-	public void setOrderLineController(OrderLineController orderLineController) {
-		this.orderLineController = orderLineController;
-	}
-
 	public Date getClosingTime() {
 		return closingTime;
 	}
@@ -131,7 +117,4 @@ public class OrderController {
 	public void setOrders(List<Order> orders) {
 		this.orders = orders;
 	}
-	
-	
-	
 }

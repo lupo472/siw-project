@@ -13,7 +13,7 @@
 	<f:view>
 		<h1>Crea un nuovo ordine</h1>
 		<h:form>
-			<ul>
+			<!--<ul>
 				<li><h:inputText value="#{productController.code}"
 						label="Codice Prodotto" required="true"
 						requiredMessage="Code is mandatory" id="code" /> <h:message
@@ -27,9 +27,9 @@
 					</h:inputText> <h:message for="quantity" /></li>
 				<li><h:commandButton value="Inserisci nell'ordine"
 						action="#{orderLineController.createOrderLine}" /></li>
-				<li><h:commandButton value="Conferma Ordine" action="#{orderController.createOrder}"/>
-
+				<li><h:commandButton value="Conferma Ordine" action="#{orderController.createOrder}"/></li> 
 			</ul>
+			-->
 		</h:form>
 	</f:view>
 </body>

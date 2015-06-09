@@ -27,25 +27,21 @@ public class OrderLineController {
 	private OrderLine orderLine;
 	
 	private List<OrderLine> orderLines;
-	
-
-	@ManagedProperty(value="#{productController}")
-	private ProductController product_controller;
 
 	private Product product;
 
 	
 	public String createOrderLine() {
 
-		this.product_controller.findProduct(this.product_controller.getCode());
-		this.product = this.product_controller.getProduct();
-		this.unitPrice = this.product.getPrice();
-		this.orderLine = orderLine_facade.createOrderLine(unitPrice, quantity, product);
-		this.orderLines.add(this.orderLine);
-
-		this.orderLine = orderLine_facade.createOrderLine(unitPrice, quantity, product);
-		
-		return "mostraLineaOrdine";
+//		this.product_controller.findProduct(this.product_controller.getCode());
+//		this.product = this.product_controller.getProduct();
+//		this.unitPrice = this.product.getPrice();
+//		this.orderLine = orderLine_facade.createOrderLine(unitPrice, quantity, product);
+//		this.orderLines.add(this.orderLine);
+//
+//		this.orderLine = orderLine_facade.createOrderLine(unitPrice, quantity, product);
+//		
+//		return "mostraLineaOrdine";
 	}
 	
 	public String listOrderLines(){

@@ -15,9 +15,6 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 public class CustomerController{
 	
-	@ManagedProperty(value="#{addressController}")
-	private AddressController addressController;
-	
 	@EJB
 	private CustomerFacade customer_facade;
     
@@ -128,13 +125,5 @@ public class CustomerController{
 
 	public void setAddress(Address address) {
 		this.address = address;
-	}
-	
-	public AddressController getAddressController() {
-		return addressController;
-	}
-
-	public void setAddressController(AddressController addressController) {
-		this.addressController = addressController;
 	}
 }
