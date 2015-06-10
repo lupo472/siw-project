@@ -1,16 +1,27 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: gabrielecugliari
-  Date: 10/06/15
-  Time: 15:01
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
+<%@ taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>ElencoOrdiniCliente</title>
+<title>Ordini</title>
 </head>
 <body>
-<h1>Questi sono i tuoi ordini</h1>
+	<f:view>
+		<h1>I tuoi ordini</h1>
+		<h:form>
+			<ol>
+				<c:forEach var="order" items="#{orderController.orders}">
+					<li>Id ordine: <h:commandLink
+							action="#{orderController.retrieveOrder}" value="#{order.id}">
+							<f:param name="id" value="#{order.id}" />
+						</h:commandLink> - Orario apertura: ${order.creationTime} - Orario chiusura:
+						${order.closingTime} - Orario evasione: ${order.processingTime}
+					</li>
+				</c:forEach>
+			</ol>
+			<!-- Mancano i bottoni torna alla HOME -->
+		</h:form>
+	</f:view>
 </body>
 </html>

@@ -55,7 +55,7 @@ public class ProductFacade {
 		Query query = this.em.createQuery("SELECT p FROM Product p WHERE p.code = :code");
 		query.setParameter("code",code);
 		try{
-			Product product = (Product)query.getSingleResult();
+			Product product = (Product)query.getResultList().get(0);
 			return product;
 		} catch (Exception e){
 			return null;

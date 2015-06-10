@@ -11,6 +11,7 @@ import it.uniroma3.siw.model.Product;
 import java.util.Date;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
@@ -85,10 +86,20 @@ public class CustomerOrderCreateController {
 	private List<Product> products;
 	
 	public String createOrderLine(){
-		this.productFound = this.product_facade.getProduct(code);
+		try{
+			this.productFound = this.product_facade.getProduct(code);
+		}
+		catch(Exception e){
+			return "createOrder";
+		}
 		this.unitPrice  = this.productFound.getPrice();
 		this.orderLine = this.orderLine_facade.createOrderLine(unitPrice, quantity, productFound);
-		this.orderLines.add(this.orderLine);
+		try{
+			this.orderLines.add(this.orderLine);
+		}
+		catch(NullPointerException e){
+			return "createOrder";
+		}
 		return "createOrder";
 	}
 	
@@ -96,6 +107,11 @@ public class CustomerOrderCreateController {
 		this.customer = this.customerController.getCustomer();
 		this.order = this.order_facade.createOrder(customer, orderLines, creationTime, new Date());
 		return "customerHome";
+	}
+	
+	@PostConstruct
+	public void init(){
+		this.creationTime = new Date();
 	}
 
 	public CustomerController getCustomerController() {

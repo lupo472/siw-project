@@ -45,13 +45,24 @@ public class OrderFacade {
 	
 	@SuppressWarnings("unchecked")
 	public List<Order> getAllOrders(){
-		Query query = this.em.createQuery("SELECT cs FROM Customer cs");
+		Query query = this.em.createQuery("SELECT os FROM Order os");
 		try {
 			List<Order> orders  = query.getResultList();
 			return orders;
 		} catch (Exception e) {
 			return null;
 		}
+	}
+	
+	public List<Order> getAllOrdersCustomer(Long id){
+		Query query = this.em.createQuery("SELECT os FROM Order os WHERE os.customer = :id");
+		query.setParameter("id",id);
+		try {
+			List<Order> orders  = query.getResultList();
+			return orders;
+		} catch (Exception e) {
+			return null;
+		}		
 	}
 	
 	public void updateOrder(Order order){

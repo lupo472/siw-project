@@ -11,15 +11,15 @@
 	<f:view>
 		<h1>Benvenuto</h1> 
 		<div>${ customerController.customer.firstName }</div>
-		<div>${ customerController.customer.lastName }</div> !
+		<div>${ customerController.customer.lastName }</div> 
 		<p>
-			<strong>Scegli un operazione</strong>
+			<strong>Scegli un'operazione</strong>
 		</p>
 		<h:form>
 		<ul>
 		<li><h:commandButton value="Catalogo Prodotti" action="#{productController.listProducts }"/></li>
 		<li><h:commandButton value="Crea nuovo ordine" action="createOrder.jsp"/></li>
-			<li><h:commandButton value="Mostra Elenco Ordini" action="ElencoOrdiniCliente.jsp"/></li>
+			<li><h:commandButton value="Mostra Elenco Ordini" action="#{orderController.listOrders}"/></li>
 
 		</ul>
 		</h:form>

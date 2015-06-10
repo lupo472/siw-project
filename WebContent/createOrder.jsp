@@ -13,23 +13,22 @@
 	<f:view>
 		<h1>Crea un nuovo ordine</h1>
 		<h:form>
-			<!--<ul>
-				<li><h:inputText value="#{productController.code}"
+			<ul>
+				<li>Codice Prodotto: <h:inputText value="#{customerOrderCreateController.code}"
 						label="Codice Prodotto" required="true"
 						requiredMessage="Code is mandatory" id="code" /> <h:message
 						for="code" /></li>
 
-				<li><h:inputText value="#{orderLineController.quantity}"
+				<li>Quantita' desiderata: <h:inputText value="#{customerOrderCreateController.quantity}"
 						label="Quantità" required="true"
 						requiredMessage="Quantity is mandatory"
 						converterMessage="Quantity must be a number" id="quantity">
 
 					</h:inputText> <h:message for="quantity" /></li>
 				<li><h:commandButton value="Inserisci nell'ordine"
-						action="#{orderLineController.createOrderLine}" /></li>
-				<li><h:commandButton value="Conferma Ordine" action="#{orderController.createOrder}"/></li> 
+						action="#{customerOrderCreateController.createOrderLine}" /></li>
+				<li><h:commandButton value="Conferma Ordine" action="#{customerOrderCreateController.createOrder}"/></li> 
 			</ul>
-			-->
 		</h:form>
 	</f:view>
 </body>
