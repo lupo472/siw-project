@@ -13,13 +13,12 @@ import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 
 @ManagedBean
-@SessionScoped
 public class OrderController {
 	@EJB
 	private OrderFacade order_facade;
 	
-//	@ManagedProperty(value="#{param.id}")
-//	private Long id;
+	@ManagedProperty(value="#{param.id}")
+	private Long id;
 	
 	@ManagedProperty(value="#{customerController}")
 	private CustomerController customerController;
@@ -49,8 +48,22 @@ public class OrderController {
 	}
 	
 	public String retrieveOrder(){
-		this.order = order_facade.getOrder(this.order.getId());
+		try{
+			this.order = order_facade.getOrder(this.id);
+			this.orderlines=this.order.getOrderlines();
+		}
+		catch(NullPointerException e){
+			return "ElencoOrdiniCliente";
+		}
 		return "mostraOrdine";
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public Date getCreationTime() {
@@ -107,5 +120,21 @@ public class OrderController {
 
 	public void setOrders(List<Order> orders) {
 		this.orders = orders;
+	}
+
+	public OrderFacade getOrder_facade() {
+		return order_facade;
+	}
+
+	public void setOrder_facade(OrderFacade order_facade) {
+		this.order_facade = order_facade;
+	}
+
+	public CustomerController getCustomerController() {
+		return customerController;
+	}
+
+	public void setCustomerController(CustomerController customerController) {
+		this.customerController = customerController;
 	}
 }

@@ -55,7 +55,7 @@ public class OrderFacade {
 	}
 	
 	public List<Order> getAllOrdersCustomer(Long id){
-		Query query = this.em.createQuery("SELECT os FROM Order os WHERE os.customer = :id");
+		Query query = this.em.createQuery("SELECT os FROM Order os WHERE os.customer.id = :id");
 		query.setParameter("id",id);
 		try {
 			List<Order> orders  = query.getResultList();

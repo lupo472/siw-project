@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Catalogo Prodotti</title>
+<title>Catalogo prodotti</title>
 </head>
 <body>
 	<f:view>
@@ -16,8 +16,8 @@
 				<c:forEach var="product" items="#{productController.products }">
 					<li>Nome: <h:commandLink
 							action="#{productController.findProduct}" value="#{product.name}">
-							<f:param name="id" value="#{product.id }" />
-						</h:commandLink> - Prezzo: ${product.price }
+							<f:param name="id" value="#{product.id}" />
+						</h:commandLink> - Prezzo: ${product.price}
 					</li>
 				</c:forEach>
 			</ol>
