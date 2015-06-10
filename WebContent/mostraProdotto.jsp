@@ -14,6 +14,7 @@
 		<li>Prezzo: ${productController.product.price }</li>
 		<li><h:outputText>Descrizione: ${productController.product.description }</h:outputText>
 		<li>Codice: ${productController.product.code }</li>
+		<li>In stock: ${productController.product.inStock }</li>
 		</ul>
 		<h:form>
 		<h:commandButton action="#{productController.listProducts }" value="Torna indietro"/>

@@ -16,7 +16,7 @@
                      requiredMessage="Email obbligatoria"
                      id="email"/> <h:message for="email" />
 	</div>
-    <div>Password: <h:inputText value="#{customerController.password}" 
+    <div>Password: <h:inputSecret value="#{customerController.password}" 
                      required="true"
                      requiredMessage="Password obbligatoria"
                      

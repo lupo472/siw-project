@@ -24,14 +24,15 @@ public class ProductController{
 	private Float price;
 	private String description;
 	private String code;
+	private int inStock;
 	
 	private Product product;
 	
 	private List<Product> products;
 	
 	public String createProduct() {
-		this.product = product_facade.createProduct(code, name, price, description);
-		return "mostraProdotto";
+		this.product = product_facade.createProduct(code, name, price, description, inStock);
+		return "updateCatalog";
 	}
 
 	public String listProducts(){
@@ -104,6 +105,14 @@ public class ProductController{
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+	
+	public int getInStock() {
+		return inStock;
+	}
+
+	public void setInStock(int inStock) {
+		this.inStock = inStock;
 	}
 	
 	public void setProducts(List<Product> products) {

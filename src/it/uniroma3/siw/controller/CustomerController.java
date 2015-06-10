@@ -42,9 +42,11 @@ public class CustomerController{
 	public String customerLogin(){
 		try {
 			Customer found = customer_facade.getCustomer(getEmail());
-				if(this.getPassword().equals(found.getPassword()))
+				if(this.getPassword().equals(found.getPassword())){
+					this.customer=found;
 					return "customerHome";
-				return "customerLogin";
+				}
+				else return "customerLogin";
 		} catch (NullPointerException e) {
 			return "customerLogin";
 		}

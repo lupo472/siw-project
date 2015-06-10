@@ -16,7 +16,7 @@
 		<h:form>
 		<ul>
 		 <li><h:commandButton value="Login" action="#{customerController.customerLogin }" /></li>
-		 
+		 <li><h:commandButton value="Login Admin" action="#{administratorController.administratorLogin }" /></li>
 		<li><h:commandButton value="Registrati" action="#{customerSignUPController.signUp}"/></li>
 		<li><h:commandButton value="Catalogo Prodotti" action="#{productController.listProducts}"/></li>
 		</ul>

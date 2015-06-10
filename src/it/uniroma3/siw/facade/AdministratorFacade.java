@@ -41,7 +41,7 @@ public class AdministratorFacade {
 	}
 	
 	public Administrator getAdministrator(String email){
-		Query query = this.em.createQuery("SELECT a FROM Administrator a WHERE a.id = :id");
+		Query query = this.em.createQuery("SELECT a FROM Administrator a WHERE a.email = :email");
 		query.setParameter("email",email);
 		try{
 			Administrator administrator = (Administrator)query.getSingleResult();

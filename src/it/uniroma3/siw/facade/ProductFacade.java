@@ -18,9 +18,9 @@ public class ProductFacade {
 	public ProductFacade(){
 	}
 
-	public Product createProduct(String code,String name,Float price,String description){
+	public Product createProduct(String code,String name,Float price,String description, int inStock){
 		try {
-			Product product = new Product(name,price,description,code);
+			Product product = new Product(name,price,description,code,inStock);
 			em.persist(product);
 			return product;
 		} catch (Exception e) {

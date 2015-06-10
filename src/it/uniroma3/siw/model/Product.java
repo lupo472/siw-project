@@ -13,7 +13,7 @@ import javax.persistence.Column;
 
 /**
  * Catalogo dei prodotti dell'azienda.
- * Può essere consultato da clienti non autenticati, ma i clienti che vogliono effettuare gli ordini 
+ * Puï¿½ essere consultato da clienti non autenticati, ma i clienti che vogliono effettuare gli ordini 
  * devono essere registrati nella anagrafica dei clienti della azienda: solo i clienti identificati 
  * e autenticati possono effettuare ordini.
  */
@@ -45,11 +45,12 @@ import javax.persistence.Column;
 	public Product() {
     }
 
-	public Product(String name, Float price, String description, String code) {
+	public Product(String name, Float price, String description, String code, int inStock) {
         this.name = name;
         this.price = price;
         this.description = description;
         this.code = code;
+        this.inStock = inStock;
 }
 
     //          Getters & Setters        

@@ -19,8 +19,8 @@ public class AdministratorController{
 
     private Administrator administrator;
     
-    @ManagedProperty(value="#{param.id}")
-    private Long id;
+//    @ManagedProperty(value="#{param.id}")
+//    private Long id;
 
     private String firstName;
 
@@ -39,7 +39,7 @@ public class AdministratorController{
 	}
 	
 	public String retrieveAdministrator(){
-		this.administrator = administrator_facade.getAdministrator(id);
+		this.administrator = administrator_facade.getAdministrator(this.administrator.getId());
 		return "mostraAmministratore";
 	}
 
@@ -51,12 +51,15 @@ public class AdministratorController{
 		this.administrator = administrator;
 	}
 	
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
+	public String administratorLogin(){
+		try {
+			Administrator found = administrator_facade.getAdministrator(getEmail());
+				if(this.getPassword().equals(found.getPassword()))
+					return "administratorHome";
+				return "administratorLogin";
+		} catch (NullPointerException e) {
+			return "administratorLogin";
+		}		
 	}
 
 	public String getFirstName() {
@@ -116,7 +119,7 @@ public class AdministratorController{
 	}
 
 	public String AdministratorLogin(){
-		Administrator found = administrator_facade.getAdministrator(id);
+		Administrator found = administrator_facade.getAdministrator(this.administrator.getId());
 		if(found!=null){
 			if(password.equals(found.getPassword())){
 				return "administratorHome";
