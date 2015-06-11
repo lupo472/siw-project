@@ -9,6 +9,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -18,7 +19,6 @@ import javax.persistence.TemporalType;
 
 @Entity
 @Table(name="orders")
-@NamedQuery(name = "findAllOrder", query = "SELECT p FROM orders p")
 public class Order {
 	@Id
 	@GeneratedValue(strategy= GenerationType.AUTO)
@@ -39,6 +39,7 @@ public class Order {
 	private Customer customer;
 
 	@OneToMany(fetch=FetchType.LAZY, cascade={CascadeType.PERSIST,CascadeType.REMOVE})
+	@JoinColumn(name = "orders_id")
 	private List<OrderLine> orderlines;
 
 	public Order(){

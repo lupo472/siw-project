@@ -14,9 +14,7 @@
 		<h:form>
 			<ol>
 				<c:forEach var="orderline" items="#{orderController.orderlines}">
-				<li>Id : ${orderline.id} </li>
-				<li>Prezzo per unita': ${orderline.unitPrice} </li>
-				<li>Quantita' : ${orderline.quantity} </li>
+				<li>Id : ${orderline.id} - Prezzo per unita': ${orderline.unitPrice} - Quantita' : ${orderline.quantity} </li>
 				</c:forEach>
 			</ol>
 			<!-- Mancano i bottoni torna alla HOME -->

@@ -1,7 +1,6 @@
 package it.uniroma3.siw.controller;
 
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 import it.uniroma3.siw.model.*;
 import it.uniroma3.siw.facade.*;
@@ -49,13 +48,13 @@ public class OrderController {
 	
 	public String retrieveOrder(){
 		try{
-			this.order = order_facade.getOrder(this.id);
-			this.orderlines=this.order.getOrderlines();
+			this.order = order_facade.getOrder(id);
+			this.orderlines=(ArrayList<OrderLine>)this.order.getOrderlines();
+			return "mostraOrdine";
 		}
 		catch(NullPointerException e){
 			return "ElencoOrdiniCliente";
 		}
-		return "mostraOrdine";
 	}
 
 	public Long getId() {
