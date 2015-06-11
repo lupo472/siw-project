@@ -1,0 +1,89 @@
+
+		
+		
+		CASO D'USO UC1: CONSULTA LISTINO
+		
+Attore primario: utente non registrato
+
+Scenario principale di successo: 
+			L'utente consulta il catalogo dei prodotti;
+			L'utente sceglie un prodotto e ne richiede i dettagli;
+			Il sistema mostra i dettagli del prodotto scelto;
+			L'utente ripete i passi precedenti un numero indefinito di volte;
+
+<---------------------------------------------------------------------------->
+			
+		CASO D'USO UC2: EFFETTUA ORDINE
+		
+Attore primario: cliente (utente registrato)
+
+Scenario principale di successo: 
+			Il cliente crea un ordine;
+			Il cliente consulta il catalogo dei prodotti;
+			Il cliente sceglie un prodotto e aggiunge codice e quantità del prodotto scelto all'ordine;
+			Il sistema imposta il prezzo unitario del prodotto scelto al prezzo corrente di listino;
+			Il sistema registra la riga ordine;
+			Il cliente ripete i due passi precedenti finché necessario;
+			Il cliente "chiude" l'ordine;
+			Il sistema registra l'ordine;
+			
+Precondizioni: il cliente è identificato e autenticato
+
+<---------------------------------------------------------------------------->
+
+		D'USO UC3: CONSULTA I PROPRI ORDINI
+
+Attore primario: cliente
+
+Scenario principale:
+			Il cliente consulta l'elenco dei propri ordini;
+			Il sistema mostra al cliente l'elenco dei suoi ordini;
+			Il cliente chiede il dettaglio di un ordine;
+			Il sistema mostra il dettaglio dell'ordine;
+			Il cliente ripete i due passi precedenti finché necessario;
+
+Precondizioni: il cliente è identificato e autenticato
+
+
+<---------------------------------------------------------------------------->
+
+		CASO D'USO UC4: INSERIMENTO PRODOTTI NEL CATALOGO
+
+Attore primario: amministrazione
+
+Scenario principale:
+			L'amministratore inserisce un nuovo prodotto nel catalogo specificandone i dettagli;
+			Il sistema registra il prodotto;
+			I punti precedenti vengono ripetuti fino a che necessario;
+
+Precondizioni: l'amministratore è identificato e autenticato
+
+<---------------------------------------------------------------------------->
+
+		CASO D'USO UC5: RECUPERA INDIRIZZO CLIENTE
+
+Attore primario: amministrazione
+
+Scenario principale:
+			L’amministratore fornisce l'id di un ordine ;
+			Il sistema mostra all’amministratore i dati del cliente che ha effettuato l’ordine;
+			Precondizioni: l’amministratore è identificato e autenticato;
+			
+<---------------------------------------------------------------------------->
+
+		CASO D'USO UC6: EVASIONE ORDINE
+
+Attore primario: amministrazione
+
+Scenario principale:
+			Il sistema presenta all'amministratore gli ordini chiusi, ma non evasi;
+			L'amministratore sceglie un ordine;
+			Il sistema evade l'ordine: aggiorna l'ordine inserendo la data di spedizione e 
+			aggiorna la quantità dei prodotti in magazzino (sottraendo la quantità di prodotti usati per l'ordine);
+
+Precondizioni:
+			l'amministratore è identificato e autenticato
+
+Eccezioni:
+			alcuni prodotti potrebbero non essere presenti in magazzino nella quantità specificata dall'ordine. In questo caso l'ordine rimane in sospeso
+
