@@ -1,5 +1,6 @@
-    <%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%> 
-    <%@ taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
+
+<%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
+<%@ taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,20 +10,21 @@
 <body>
 <body>
 	<f:view>
-		<h1>Benvenuto</h1>
-		<div>${ customerController.customer.firstName }</div>
-		<div>${ customerController.customer.lastName }</div> 
-		
+		<h1>Benvenuto ${customerController.customer.firstName}
+			${customerController.customer.lastName} !</h1>
 		<p>
 			<strong>Scegli un'operazione</strong>
 		</p>
 		<h:form>
-		<ul>
-		<li><h:commandButton value="Catalogo Prodotti" action="#{productController.listProducts }"/></li>
-		<li><h:commandButton value="Crea nuovo ordine" action="createOrder.jsp"/></li>
-			<li><h:commandButton value="Mostra Elenco Ordini" action="#{orderController.listOrders}"/></li>
+			<ul>
+				<li><h:commandButton value="Catalogo Prodotti"
+						action="#{productController.listProducts }" /></li>
+				<li><h:commandButton value="Crea nuovo ordine"
+						action="createOrder.jsp" /></li>
+				<li><h:commandButton value="Mostra Elenco Ordini"
+						action="#{orderController.listOrders}" /></li>
 
-		</ul>
+			</ul>
 		</h:form>
 	</f:view>
 </body>
