@@ -4,7 +4,7 @@ package it.uniroma3.siw.facade;
 import it.uniroma3.siw.model.*;
 
 import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -22,11 +22,19 @@ public class OrderFacade {
 	public Order createOrder(Customer customer, List<OrderLine> orderlines, Date creationTime, Date closingTime){
 		try {
 			Order order = new Order(creationTime, customer);
+			if(order!=null){
+				System.out.println("NOT NULL");
+			}
+			System.out.println("aggiungo closing time");
 			order.setClosingTime(closingTime);
+			System.out.println("aggiungo order lines");
 			order.setOrderlines(orderlines);
+			System.out.println("creo tabella");
 			em.persist(order);
+			System.out.println("");
 			return order;
-		} catch (Exception e) {
+		} catch (NullPointerException e) {
+			System.out.println("NULL");
 			return null;
 		}
 	}

@@ -8,8 +8,7 @@ import it.uniroma3.siw.model.Order;
 import it.uniroma3.siw.model.OrderLine;
 import it.uniroma3.siw.model.Product;
 
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -93,9 +92,12 @@ public class CustomerOrderCreateController {
 			return "createOrder";
 		}
 		this.unitPrice  = this.productFound.getPrice();
-		this.orderLine = this.orderLine_facade.createOrderLine(unitPrice, quantity, productFound);
+		this.orderLine = new OrderLine(unitPrice, quantity);
+		this.orderLine.setProduct(productFound);
 		try{
 			this.orderLines.add(this.orderLine);
+			this.orderLine=null;
+			System.out.println(this.orderLines.size());
 		}
 		catch(NullPointerException e){
 			return "createOrder";
@@ -106,11 +108,16 @@ public class CustomerOrderCreateController {
 	public String createOrder(){
 		this.customer = this.customerController.getCustomer();
 		this.order = this.order_facade.createOrder(customer, orderLines, creationTime, new Date());
+		if(this.order!=null){
+			System.out.println("ordine creato");
+			this.orderLines.clear();
+		}
 		return "customerHome";
 	}
 	
 	@PostConstruct
 	public void init(){
+		this.orderLines = new LinkedList<OrderLine>();
 		this.creationTime = new Date();
 	}
 

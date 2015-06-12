@@ -25,20 +25,20 @@ public class Order {
 	private Long id;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date creationTime;//la data in cui l'ordine è stato aperto dal cliente 
+	private Date creationTime;//la data in cui l'ordine ï¿½ stato aperto dal cliente 
 	
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date closingTime;//la data in cui l'ordine è stato chiuso dal cliente (da quel momento in poi l'ordine non 
-							 //verrà modificato e l'amministrazione può procedere ad evadere l'ordine)
+	private Date closingTime;//la data in cui l'ordine ï¿½ stato chiuso dal cliente (da quel momento in poi l'ordine non 
+							 //verrï¿½ modificato e l'amministrazione puï¿½ procedere ad evadere l'ordine)
 
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date processingDate; //la data in cui l'ordine è stato evaso (cioè la data in cui i prodotti 
+	private Date processingDate; //la data in cui l'ordine ï¿½ stato evaso (cioï¿½ la data in cui i prodotti 
 								//ordinati sono stati prelevati dal magazzino e spediti al cliente)
 
 	@ManyToOne(fetch=FetchType.EAGER)
 	private Customer customer;
 
-	@OneToMany(fetch=FetchType.LAZY, cascade={CascadeType.PERSIST,CascadeType.REMOVE})
+	@OneToMany(fetch=FetchType.EAGER, cascade={CascadeType.PERSIST,CascadeType.REMOVE})
 	@JoinColumn(name = "orders_id")
 	private List<OrderLine> orderlines;
 
