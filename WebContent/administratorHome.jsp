@@ -16,6 +16,7 @@
 		<ul>
 		<li><a href="updateCatalog.jsp">Aggiorna Catalogo</a></li>
 		<li><a href="inserisciIdOrdine.jsp">Mostra Dati Cliente</a></li>
+		<li><h:commandButton value="Logout" action="#{administratorController.administratorLogout}"/>
 		</ul>
 		</h:form>
 	</f:view>

@@ -51,6 +51,13 @@ public class CustomerController{
 			return "customerLogin";
 		}
 	}
+	
+	public String customerLogout(){
+		this.customer = null;
+		this.email = null;
+		this.password = null;
+		return "index";
+	}
 
 	public Customer getCustomer() {
 		return customer;

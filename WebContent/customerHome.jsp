@@ -23,6 +23,8 @@
 						action="createOrder.jsp" /></li>
 				<li><h:commandButton value="Mostra Elenco Ordini"
 						action="#{orderController.listOrders}" /></li>
+				<li><h:commandButton value="Logout"
+						action="#{customerController.customerLogout}" /></li>
 
 			</ul>
 		</h:form>

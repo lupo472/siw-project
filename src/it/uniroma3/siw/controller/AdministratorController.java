@@ -43,14 +43,7 @@ public class AdministratorController{
 		return "mostraAmministratore";
 	}
 
-	public Administrator getAdministrator() {
-		return administrator;
-	}
 
-	public void setAdministrator(Administrator administrator) {
-		this.administrator = administrator;
-	}
-	
 	public String administratorLogin(){
 		try {
 			Administrator found = administrator_facade.getAdministrator(getEmail());
@@ -62,6 +55,21 @@ public class AdministratorController{
 		}		
 	}
 
+	public String administratorLogout(){
+		this.administrator = null;
+		this.email = null;
+		this.password = null;
+		return "index";
+	}
+	
+	public Administrator getAdministrator() {
+		return administrator;
+	}
+
+	public void setAdministrator(Administrator administrator) {
+		this.administrator = administrator;
+	}
+	
 	public String getFirstName() {
 		return firstName;
 	}
@@ -118,13 +126,11 @@ public class AdministratorController{
 		this.address = address;
 	}
 
-	public String AdministratorLogin(){
-		Administrator found = administrator_facade.getAdministrator(this.administrator.getId());
-		if(found!=null){
-			if(password.equals(found.getPassword())){
-				return "administratorHome";
-			}
-		}
-		return "index";
+	public AdministratorFacade getAdministrator_facade() {
+		return administrator_facade;
+	}
+
+	public void setAdministrator_facade(AdministratorFacade administrator_facade) {
+		this.administrator_facade = administrator_facade;
 	}
 }
