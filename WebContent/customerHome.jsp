@@ -17,8 +17,8 @@
 		</p>
 		<h:form>
 			<ul>
-				<li><h:commandButton value="Catalogo Prodotti"
-						action="#{productController.listProducts }" /></li>
+				<li><h:commandButton value="catalogo Prodotti"
+						action="#{productController.listProductsCustomer}" /></li>
 				<li><h:commandButton value="Crea nuovo ordine"
 						action="createOrder.jsp" /></li>
 				<li><h:commandButton value="Mostra Elenco Ordini"

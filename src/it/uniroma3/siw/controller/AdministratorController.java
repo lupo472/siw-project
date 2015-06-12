@@ -1,11 +1,12 @@
 package it.uniroma3.siw.controller;
 
 
-import java.util.Date;
+import java.util.*;
 
 import it.uniroma3.siw.facade.*;
 import it.uniroma3.siw.model.*;
 
+import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
@@ -32,6 +33,13 @@ public class AdministratorController{
     private Date registrationDate;
     
     private Address address;
+    
+    private List<Product> products;
+    
+	@PostConstruct
+    public void init(){
+    	this.products = new ArrayList<Product>();
+    }
     
 	public String createAdministrator(){
 		this.administrator= administrator_facade.createAdministrator(firstName, lastName, email, password, dateOfBirth, registrationDate, address);
