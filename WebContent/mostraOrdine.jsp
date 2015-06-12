@@ -13,7 +13,7 @@
 		<h1>Ordine selezionato</h1>
 		<h:form>
 			<ol>
-				<c:forEach var="orderline" items="#{orderController.orderlines}">
+				<c:forEach var="orderline" items="${orderController.orderlines}">
 				<li>Id : ${orderline.id} - Prezzo per unita': ${orderline.unitPrice} - Quantita' : ${orderline.quantity} </li>
 				</c:forEach>
 			</ol>
