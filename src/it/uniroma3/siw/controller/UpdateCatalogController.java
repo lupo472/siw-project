@@ -10,6 +10,7 @@ import it.uniroma3.siw.model.Provider;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -34,7 +35,7 @@ public class UpdateCatalogController {
 	@EJB
 	private ProductFacade productFacade;
 
-	private List<Provider> providers = new ArrayList<Provider>();
+	private List<Provider> providers;
 	/*
 	 * Lato Provider
 	 */
@@ -65,9 +66,15 @@ public class UpdateCatalogController {
 	
 	@EJB
 	private AddressFacade addressFacade;
+	
+	@PostConstruct
+	public void init(){
+		this.providers = new ArrayList<Provider>();
+	}
 
 	public String createProduct(){
 		this.product = this.productFacade.createProduct(code, nameProduct, price, description, inStock, providers);
+		this.svuotaCampi();
 		return "administratorHome";
 	}
 
@@ -77,27 +84,35 @@ public class UpdateCatalogController {
 			this.provider = new Provider(nameProvider, phoneNumber, email, vatin);
 			this.provider.setAddress(addressProvider);
 			this.providers.add(provider);
-			
-//			this.svuotaCampi();
-			
 			return "updateCatalog";
 
 	}
 
-//	private void svuotaCampi(){
-//		//cancellazione dei dati inseriti dopo aver cliccato "aggiungi provider"
-//		this.street = " ";
-//		this.city = " ";
-//		this.state = " ";
-//		this.zipCode = 0;
-//		this.country = " ";
-//		
-//		this.nameProvider = " ";
-//		this.phoneNumber = " ";
-//		this.email = " ";
-//		this.vatin = " ";
-//		
-//	}
+	private void svuotaCampi(){
+		//cancellazione dei dati inseriti dopo aver cliccato "aggiungi provider"
+		this.providers.clear();
+		this.street = null;
+		this.city = null;
+		this.state = null;
+		this.zipCode = 0;
+		this.country = null;
+		
+		this.nameProvider = null;
+		this.phoneNumber = null;
+		this.email = null;
+		this.vatin = null;
+		
+		this.provider = null;
+		this.addressProvider = null;
+		this.product = null;
+		
+		this.code = null;
+		this.nameProduct = null;
+		this.price = null;
+		this.description = null;
+		this.inStock = 0;
+		
+	}
 	
 	
 	public String getNameProduct() {

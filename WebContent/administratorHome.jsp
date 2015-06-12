@@ -14,8 +14,8 @@
 		</p>
 		<h:form>
 			<ul>
-				<li><a href="updateCatalog.jsp">Aggiorna Catalogo</a></li>
-				<li><a href="inserisciIdOrdine.jsp">Mostra Dati Cliente</a></li>
+				<li><h:commandButton value="Aggiorna catalogo" action="updateCatalog"/></li>
+				<li><h:commandButton value="Mostra dati cliente" action="inserisciIdOrdine"/></li>
 				<li><h:commandButton value="Logout"
 						action="#{administratorController.administratorLogout}" />
 				<li><h:commandButton value="Evadi un ordine"
