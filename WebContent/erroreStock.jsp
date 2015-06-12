@@ -4,19 +4,22 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Admin Home</title>
+<title>Errore</title>
 </head>
 <body>
 	<f:view>
-		<h1>Pannello di amministrazione</h1> 
+		<h1>Errore Ordine</h1>
 		<p>
-			<strong>Scegli un'operazione</strong>
+			<strong>Hai scelto una quantita' errata per quel prodotto!</strong> 
+			<strong>quantita'
+				disponibile per il prodotto ${customerOrderCreateController.productFound.id} :
+				${customerOrderCreateController.productFound.inStock}</strong>
 		</p>
 		<h:form>
-		<ul>
-		<li><a href="updateCatalog.jsp">Aggiorna Catalogo</a></li>
-		<li><a href="inserisciIdOrdine.jsp">Mostra Dati Cliente</a></li>
-		</ul>
+			<ul>
+				<li><h:commandButton value="Riprova"
+						action="createOrder.jsp" /></li>
+			</ul>
 		</h:form>
 	</f:view>
 </body>

@@ -94,6 +94,10 @@ public class CustomerOrderCreateController {
 		this.unitPrice  = this.productFound.getPrice();
 		this.orderLine = new OrderLine(unitPrice, quantity);
 		this.orderLine.setProduct(productFound);
+		if(this.quantity>this.productFound.getInStock() || this.quantity<0 || this.quantity==0){
+			this.orderLine=null;
+			return "erroreStock";
+		}
 		try{
 			this.orderLines.add(this.orderLine);
 			this.orderLine=null;

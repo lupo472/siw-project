@@ -56,6 +56,17 @@ public class OrderController {
 			return "ElencoOrdiniCliente";
 		}
 	}
+	
+	public String retrieveCustomer(){
+		try{
+			this.order = order_facade.getOrder(id);
+			this.customer = this.order.getCustomer();
+			return "mostraCliente";
+		}
+		catch(NullPointerException e){
+			return "inserisciIdOrdine";
+		}		
+	}
 
 	public Long getId() {
 		return id;
