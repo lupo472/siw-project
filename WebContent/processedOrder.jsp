@@ -4,21 +4,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Admin Home</title>
+<title>Pannello amministrazione</title>
 </head>
 <body>
 	<f:view>
-		<h1>Pannello di amministrazione</h1>
+		<h1>Ordine processato</h1>
 		<p>
-			<strong>Scegli un'operazione</strong>
+			<strong>L'ordine ${orderController.id} e' stato processato correttamente.</strong>
+			<strong>Orario evasione: ${orderController.processingDate}</strong>
 		</p>
 		<h:form>
 			<ul>
-				<li><a href="updateCatalog.jsp">Aggiorna Catalogo</a></li>
-				<li><a href="inserisciIdOrdine.jsp">Mostra Dati Cliente</a></li>
-				<li><h:commandButton value="Logout"
-						action="#{administratorController.administratorLogout}" />
-				<li><h:commandButton value="Evadi un ordine"
+				<li><h:commandButton value="Evadi un altro ordine"
 						action="#{orderController.retrieveAllNotProcessedOrders}" /></li>
 			</ul>
 		</h:form>
