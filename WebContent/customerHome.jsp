@@ -20,7 +20,7 @@
 				<li><h:commandButton value="Catalogo Prodotti"
 						action="#{productController.listProducts }" /></li>
 				<li><h:commandButton value="Crea nuovo ordine"
-						action="createOrder.jsp" /></li>
+						action="createOrder" /></li>
 				<li><h:commandButton value="Mostra Elenco Ordini"
 						action="#{orderController.listOrders}" /></li>
 				<li><h:commandButton value="Logout"

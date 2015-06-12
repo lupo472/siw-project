@@ -18,7 +18,7 @@
 		<h:form>
 			<ul>
 				<li><h:commandButton value="Riprova"
-						action="createOrder.jsp" /></li>
+						action="createOrder" /></li>
 			</ul>
 		</h:form>
 	</f:view>
