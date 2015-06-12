@@ -23,7 +23,7 @@
 				<li><h:commandButton value="Login Admin"
 						action="#{administratorController.administratorLogin }" /></li>
 				<li><h:commandButton value="Registrati"
-						action="#{customerSignUPController.signUp}" /></li>
+						action="#{customerController.signUp}" /></li>
 				<li><h:commandButton value="Catalogo prodotti"
 						action="#{productController.listProducts}" /></li>
 			</ul>
