@@ -35,6 +35,15 @@ public class ProductController{
 		return "listaProdotti";
 	}
 	
+	public String listProductsAdmin(){
+		this.products = product_facade.getAllProducts();
+		return "listaProdottiAdmin";
+	}
+	public String listProductsCustomer(){
+		this.products = product_facade.getAllProducts();
+		return "listaProdottiCliente";
+	}
+	
 	public String findProduct(){
 		this.product = product_facade.getProduct(id);
 		return "mostraProdotto";

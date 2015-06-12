@@ -9,17 +9,24 @@
 </head>
 <body>
 	<f:view>
-		<h1>Benvenuto</h1>
+		<h1>Benvenuto visitatore!</h1>
 		<p>
-			<strong>Scegli un operazione</strong>
+			<strong>Scegli un operazione </strong>
+		</p>
+		<p>
+			<strong>Registrati o accedi al portale se vuoi effettuare un
+				ordine!</strong>
 		</p>
 		<h:form>
-		<ul>
-		 <li><h:commandButton value="Login" action="customerLogin" /></li>
-		 <li><h:commandButton value="Login Admin" action="#{administratorController.administratorLogin }" /></li>
-		<li><h:commandButton value="Registrati" action="#{customerSignUPController.signUp}"/></li>
-		<li><h:commandButton value="Catalogo Prodotti" action="#{productController.listProducts}"/></li>
-		</ul>
+			<ul>
+				<li><h:commandButton value="Login" action="customerLogin" /></li>
+				<li><h:commandButton value="Login Admin"
+						action="#{administratorController.administratorLogin }" /></li>
+				<li><h:commandButton value="Registrati"
+						action="#{customerSignUPController.signUp}" /></li>
+				<li><h:commandButton value="Catalogo prodotti"
+						action="#{productController.listProducts}" /></li>
+			</ul>
 		</h:form>
 	</f:view>
 </body>

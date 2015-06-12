@@ -20,6 +20,8 @@
 						action="#{administratorController.administratorLogout}" />
 				<li><h:commandButton value="Evadi un ordine"
 						action="#{orderController.retrieveAllNotProcessedOrders}" /></li>
+				<li><h:commandButton value="catalogo Prodotti"
+						action="#{productController.listProductsAdmin}" /></li>
 			</ul>
 		</h:form>
 	</f:view>

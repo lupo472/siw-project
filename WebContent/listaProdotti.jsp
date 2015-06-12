@@ -21,7 +21,10 @@
 					</li>
 				</c:forEach>
 			</ol>
-			<!-- Mancano i bottoni torna alla HOME -->
+			<ul>
+				<li><h:commandButton value="Torna alla home"
+						action="index.jsp" /></li>
+			</ul>
 		</h:form>
 	</f:view>
 </body>

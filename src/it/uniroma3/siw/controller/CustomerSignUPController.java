@@ -56,8 +56,15 @@ public class CustomerSignUPController {
 
 	public String signUp(){
 		try {
+			Customer c = this.customerFacade.getCustomer(email);
+			if(c!=null){
+				System.out.println("mail duplicata");
+				return "erroreMailDuplicata";
+			}
 			this.address = new Address(street, city, state, zipCode, country);
 			this.customer = this.customerFacade.createCustomer(firstName, lastName, email, password, dateOfBirth, new Date(), address);
+			this.firstName=this.customer.getFirstName();
+			this.lastName=this.customer.getLastName();
 			return "customerHome";
 		} catch (Exception e) {
 			return "customerSignUp";

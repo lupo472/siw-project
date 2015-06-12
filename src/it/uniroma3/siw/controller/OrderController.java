@@ -17,6 +17,9 @@ public class OrderController {
 	@EJB
 	private OrderFacade order_facade;
 	
+	@EJB
+	private ProductFacade product_facade;
+	
 	@ManagedProperty(value="#{param.id}")
 	private Long id;
 	
@@ -61,7 +64,7 @@ public class OrderController {
 		}
 		this.order = order_facade.getOrder(id);
 		if(this.order==null){
-			return "processOrder";
+			return "erroreOrdineNonTrovato";
 		}
 		if(this.checkOrderLines(this.order)){
 			this.updateProductsQuantity();
@@ -86,8 +89,10 @@ public class OrderController {
 	
 	private void updateProductsQuantity(){
 		for(OrderLine o : this.orderlines){
-			int newquantity = o.getProduct().getInStock()-o.getQuantity();
-			o.getProduct().setInStock(newquantity);
+			Product p = o.getProduct();
+			int newquantity = p.getInStock()-o.getQuantity();
+			p.setInStock(newquantity);
+			this.product_facade.updateProduct(p);
 		}		
 		return;
 	}
@@ -127,6 +132,9 @@ public class OrderController {
 	
 	public String retrieveAllNotProcessedOrders(){
 		List<Order> allOrders = order_facade.getAllOrders();
+		if(allOrders==null || allOrders.isEmpty()==true){
+			return "erroreZeroOrdini";
+		}
 		List<Order> notProcessedOrders = new ArrayList<Order>();
 		for(Order o : allOrders){
 			if(o.getProcessingDate()==null){
