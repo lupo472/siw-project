@@ -4,20 +4,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Admin Home</title>
+<title>Pannello amministrazione</title>
 </head>
 <body>
 	<f:view>
-		<h1>Pannello di amministrazione</h1> 
+		<h1>Ordine sospeso</h1>
 		<p>
-			<strong>Scegli un'operazione</strong>
+			<strong>Alcuni prodotti non sono presenti in magazzino nella quantita' specificata dall'ordine ${orderController.id}. </strong>
+			<strong>L'ordine e' stato sospeso.</strong>
 		</p>
 		<h:form>
 			<ul>
-				<li><a href="updateCatalog.jsp">Aggiorna Catalogo</a></li>
-				<li><h:commandButton value="Evadi un ordine"
+				<li><h:commandButton value="Torna Indietro"
 						action="#{orderController.retrieveAllNotProcessedOrders}" /></li>
-				<li><a href="inserisciIdOrdine.jsp">Mostra Dati Cliente</a></li>
 			</ul>
 		</h:form>
 	</f:view>

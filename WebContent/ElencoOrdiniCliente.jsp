@@ -15,8 +15,8 @@
 					<li>Id ordine: <h:commandLink
 							action="#{orderController.retrieveOrder}" value="#{order.id}">
 							<f:param name="id" value="#{order.id}" />
-						</h:commandLink> - Orario apertura: ${order.creationTime} - Orario chiusura:
-						${order.closingTime}
+						</h:commandLink> - Data apertura: ${order.creationTime} - Data chiusura:
+						${order.closingTime} - Data evasione ${order.processingDate}
 					</li>
 				</c:forEach>
 			</ol>

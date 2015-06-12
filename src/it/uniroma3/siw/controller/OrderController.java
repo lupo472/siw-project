@@ -5,6 +5,7 @@ import java.util.*;
 import it.uniroma3.siw.model.*;
 import it.uniroma3.siw.facade.*;
 
+import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
@@ -36,6 +37,11 @@ public class OrderController {
 	
 	private List<OrderLine> orderlines;
 	
+	@PostConstruct
+	public void init(){
+		this.processingDate=null;
+	}
+	
 	public String createOrder() {
 		return "";
 	}
@@ -43,7 +49,47 @@ public class OrderController {
 	public String listOrders(){
 		this.customer = this.customerController.getCustomer();		
 		this.orders = order_facade.getAllOrdersCustomer(this.customer.getId());
+		if(this.orders==null){
+			return "customerHome";
+		}
 		return "ElencoOrdiniCliente";
+	}
+	
+	public String processOrder(){
+		if(this.processingDate!=null){
+			return "processOrder";
+		}
+		this.order = order_facade.getOrder(id);
+		if(this.order==null){
+			return "processOrder";
+		}
+		if(this.checkOrderLines(this.order)){
+			this.updateProductsQuantity();
+			Date d = new Date();
+			this.processingDate=d;
+			this.order.setProcessingDate(d);
+			this.order_facade.updateOrder(this.order);
+			return "processedOrder";
+		}
+		return "suspendedOrder";
+	}
+	
+	private boolean checkOrderLines(Order order){
+		this.orderlines = order.getOrderlines();
+		for(OrderLine o : this.orderlines){
+			if(o.getProduct().getInStock()<o.getQuantity()){
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	private void updateProductsQuantity(){
+		for(OrderLine o : this.orderlines){
+			int newquantity = o.getProduct().getInStock()-o.getQuantity();
+			o.getProduct().setInStock(newquantity);
+		}		
+		return;
 	}
 	
 	public String retrieveOrder(){
@@ -66,6 +112,29 @@ public class OrderController {
 		catch(NullPointerException e){
 			return "inserisciIdOrdine";
 		}		
+	}
+	
+	public String retrieveAllOrders(){
+		this.orders=order_facade.getAllOrders();
+		
+		if(this.orders==null){
+			System.out.println("NULLA");
+			return "processOrder";
+		}
+		System.out.println("NON NULLA");
+		return "processOrder";
+	}
+	
+	public String retrieveAllNotProcessedOrders(){
+		List<Order> allOrders = order_facade.getAllOrders();
+		List<Order> notProcessedOrders = new ArrayList<Order>();
+		for(Order o : allOrders){
+			if(o.getProcessingDate()==null){
+				notProcessedOrders.add(o);
+			}
+		}
+		this.orders = notProcessedOrders;
+		return "processOrder";
 	}
 
 	public Long getId() {

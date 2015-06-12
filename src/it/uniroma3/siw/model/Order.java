@@ -48,6 +48,7 @@ public class Order {
 	public Order(Date creationTime,Customer customer){
 		this.creationTime=creationTime;
 		this.customer=customer;
+		this.processingDate=null;
 	}
 
 	//Getters & Setters
