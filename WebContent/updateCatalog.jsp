@@ -13,41 +13,100 @@
 		<h:form id="form1">
 			<div>
 				Nome:
-				<h:inputText value="#{productController.name}"
+				<h:inputText value="#{updateCatalogController.nameProduct}"
 					required="true" requiredMessage="Campo obbligatorio" id="name" />
 				<h:message for="name" />
 			</div>
 			<div>
 				Prezzo:
-				<h:inputText value="#{productController.price}" autocomplete="off"
+				<h:inputText value="#{updateCatalogController.price}"
 					required="true" requiredMessage="Campo obbligatorio" id="price" />
 				<h:message for="price" />
 			</div>
 			<div>
 				Descrizione:
-				<h:inputText value="#{productController.description}"
-					autocomplete="off" size="60" required="true"
-					requiredMessage="Campo obbligatorio" id="description" />
+				<h:inputText value="#{updateCatalogController.description}"
+					size="60" required="true" requiredMessage="Campo obbligatorio"
+					id="description" />
 				<h:message for="description" />
 			</div>
 			<div>
 				Codice:
-				<h:inputText value="#{productController.code}" autocomplete="off"
-					required="true" requiredMessage="Campo obbligatorio" id="code" />
+				<h:inputText value="#{updateCatalogController.code}" required="true"
+					requiredMessage="Campo obbligatorio" id="code" />
 				<h:message for="code" />
 			</div>
 			<div>
 				Numero in stock:
-				<h:inputText value="#{productController.inStock}" autocomplete="off"
+				<h:inputText value="#{updateCatalogController.inStock}"
 					required="true" requiredMessage="Campo obbligatorio" id="inStock" />
-				<h:message for="code" />
+				<h:message for="inStock" />
+			</div>
+			<p>Dati Provider/s:</p>
+			<div>
+				Nome:
+				<h:inputText value="#{updateCatalogController.nameProvider}"
+					required="true" requiredMessage="Campo obbligatorio"
+					id="nameProvider" />
+				<h:message for="nameProvider" />
 			</div>
 			<div>
-				<h:commandButton value="Aggiungi"
-					action="#{productController.createProduct}" />
+				Telefono:
+				<h:inputText value="#{updateCatalogController.phoneNumber}"
+					required="true" requiredMessage="Campo obbligatorio"
+					id="phoneNumber" />
+				<h:message for="phoneNumber" />
 			</div>
 			<div>
-				<h:commandButton value="Cancella campi" onclick="reset" />
+				Email:
+				<h:inputText value="#{updateCatalogController.email}"
+					required="true" requiredMessage="Campo obbligatorio" id="email" />
+				<h:message for="email" />
+			</div>
+			<div>
+				Vatin:
+				<h:inputText value="#{updateCatalogController.vatin}"
+					required="true" requiredMessage="Campo obbligatorio" id="vatin" />
+				<h:message for="vatin" />
+			</div>
+			<p>Dati indirizzo provider</p>
+			<div>
+				Via:
+				<h:inputText value="#{updateCatalogController.street}"
+					required="true" requiredMessage="Campo obbligatorio" id="street" />
+				<h:message for="street" />
+			</div>
+			<div>
+				Città:
+				<h:inputText value="#{updateCatalogController.city}" required="true"
+					requiredMessage="Campo obbligatorio" id="city" />
+				<h:message for="city" />
+			</div>
+			<div>
+				Stato:
+				<h:inputText value="#{updateCatalogController.state}"
+					required="true" requiredMessage="Campo obbligatorio" id="state" />
+				<h:message for="state" />
+			</div>
+			<div>
+				Regione:
+				<h:inputText value="#{updateCatalogController.country}"
+					required="true" requiredMessage="Campo obbligatorio" id="country" />
+				<h:message for="country" />
+			</div>
+			<div>
+				ZipCode:
+				<h:inputText value="#{updateCatalogController.zipCode}"
+					required="true" requiredMessage="Campo obbligatorio" id="zipCode" />
+				<h:message for="zipCode" />
+			</div>
+			<div>
+				<h:commandButton value="Aggiungi provider"
+					action="#{updateCatalogController.createProvider}" />
+			</div>
+			<div>
+				<h:commandButton value="Salva prodotto"
+					action="#{updateCatalogController.createProduct}" />
 			</div>
 		</h:form>
 	</f:view>
