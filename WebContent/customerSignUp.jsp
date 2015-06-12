@@ -14,19 +14,19 @@
 		<h1>Inserisci i tuoi dati</h1>
 		<div>
 			Nome:
-			<h:inputText value="#{customerSignUPController.firstName}"
+			<h:inputText value="#{customerController.firstName}"
 				required="true" requiredMessage="Nome obbligatorio" id="firstName" />
 			<h:message for="firstName" />
 		</div>
 		<div>
 			Cognome:
-			<h:inputText value="#{customerSignUPController.lastName}"
+			<h:inputText value="#{customerController.lastName}"
 				required="true" requiredMessage="Cognome obbligatorio" id="lastName" />
 			<h:message for="lastName" />
 		</div>
 		<div>
 			Data di nascita:
-			<h:inputText value="#{customerSignUPController.dateOfBirth}"
+			<h:inputText value="#{customerController.dateOfBirth}"
 				required="true" requiredMessage="Data obbligatoria" id="dateOfBirth">
 				<f:convertDateTime pattern="d-M-yyyy" />
 				<h:message for="dateOfBirth" />
@@ -34,7 +34,7 @@
 		</div>
 		<div>
 			Password:
-			<h:inputSecret value="#{customerSignUPController.password}"
+			<h:inputSecret value="#{customerController.password}"
 				required="true" requiredMessage="Password obbligatoria"
 				id="password" />
 			<h:message for="password" />
@@ -42,44 +42,44 @@
 
 		<div>
 			Email:
-			<h:inputText value="#{customerSignUPController.email}"
+			<h:inputText value="#{customerController.email}"
 				required="true" requiredMessage="Email obbligatoria" id="email" />
 			<h:message for="email" />
 		</div>
 		<div>Dati indirizzo:</div>
 		<div>
 			Via:
-			<h:inputText value="#{customerSignUPController.street}"
+			<h:inputText value="#{customerController.street}"
 				required="true" requiredMessage="Via obbligatoria" id="street" />
 			<h:message for="street" />
 		</div>
 		<div>
 			Citta':
-			<h:inputText value="#{customerSignUPController.city}" required="true"
+			<h:inputText value="#{customerController.city}" required="true"
 				requiredMessage="Citta' obbligatoria" id="city" />
 			<h:message for="city" />
 		</div>
 		<div>
 			Stato/Regione :
-			<h:inputText value="#{customerSignUPController.state}"
+			<h:inputText value="#{customerController.state}"
 				required="true" requiredMessage="Stato obbligatorio" id="state" />
 			<h:message for="state" />
 		</div>
 		<div>
 			Paese :
-			<h:inputText value="#{customerSignUPController.country}"
+			<h:inputText value="#{customerController.country}"
 				required="true" requiredMessage="Paese obbligatorio" id="country" />
 			<h:message for="country" />
 		</div>
 		<div>
 			ZipCode :
-			<h:inputText value="#{customerSignUPController.zipCode}"
+			<h:inputText value="#{customerController.zipCode}"
 				required="true" requiredMessage="Zipcode obbligatorio" id="zipCode" />
 			<h:message for="zipCode" />
 		</div>
 		<div>
 			<h:commandButton value="Submit"
-				action="#{customerSignUPController.signUp}" />
+				action="#{customerController.signUp}" />
 
 		</div>
 	</h:form>
