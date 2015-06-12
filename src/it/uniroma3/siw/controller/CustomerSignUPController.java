@@ -56,7 +56,7 @@ public class CustomerSignUPController {
 
 	public String signUp(){
 		try {
-			this.address = this.addressFacade.createAddress(street, city, state, zipCode, country);
+			this.address = new Address(street, city, state, zipCode, country);
 			this.customer = this.customerFacade.createCustomer(firstName, lastName, email, password, dateOfBirth, new Date(), address);
 			return "customerHome";
 		} catch (Exception e) {

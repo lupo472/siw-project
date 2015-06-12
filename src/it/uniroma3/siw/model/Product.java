@@ -2,6 +2,7 @@ package it.uniroma3.siw.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -36,7 +37,7 @@ import javax.persistence.Column;
 	@Column(nullable = false)
 	private String code;
 	
-	@ManyToMany(mappedBy="products", fetch=FetchType.LAZY)
+	@ManyToMany(fetch=FetchType.LAZY, cascade={CascadeType.PERSIST,CascadeType.REMOVE})
 	private List<Provider> providers;
 	
 	@Column

@@ -32,7 +32,7 @@ public class Provider {
 	private String vatin;
 	
 
-	@ManyToMany(fetch=FetchType.LAZY, cascade={CascadeType.PERSIST,CascadeType.REMOVE})
+	@ManyToMany(mappedBy="providers", fetch=FetchType.LAZY)
 	private List<Product> products;
 	
 	@OneToOne(fetch=FetchType.EAGER,cascade={CascadeType.PERSIST,CascadeType.REMOVE})
