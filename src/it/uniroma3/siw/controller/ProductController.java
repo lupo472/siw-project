@@ -29,11 +29,6 @@ public class ProductController{
 	private Product product;
 	
 	private List<Product> products;
-	
-	public String createProduct() {
-		this.product = product_facade.createProduct(code, name, price, description, inStock);
-		return "updateCatalog";
-	}
 
 	public String listProducts(){
 		this.products = product_facade.getAllProducts();

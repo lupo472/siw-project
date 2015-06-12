@@ -73,8 +73,7 @@ public class UpdateCatalogController {
 
 	public String createProvider(){
 			
-			this.addressProvider = this.addressFacade.createAddress(street, city, state, zipCode, country);
-//			this.provider = this.providerFacade.createProvider(nameProvider, phoneNumber, email, vatin, addressProvider, productsProvider);
+			this.addressProvider = new Address(street, city, state, zipCode, country);
 			this.provider = new Provider(nameProvider, phoneNumber, email, vatin);
 			this.provider.setAddress(addressProvider);
 			this.providers.add(provider);

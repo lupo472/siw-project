@@ -1,6 +1,7 @@
 package it.uniroma3.siw.facade;
 
 import it.uniroma3.siw.model.Product;
+import it.uniroma3.siw.model.Provider;
 
 import java.util.List;
 
@@ -18,9 +19,10 @@ public class ProductFacade {
 	public ProductFacade(){
 	}
 
-	public Product createProduct(String code,String name,Float price,String description, int inStock){
+	public Product createProduct(String code,String name,Float price,String description, int inStock, List<Provider> providers){
 		try {
 			Product product = new Product(name,price,description,code,inStock);
+			product.setProviders(providers);
 			em.persist(product);
 			return product;
 		} catch (Exception e) {
