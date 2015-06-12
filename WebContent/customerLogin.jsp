@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Customer Login</title>
+<title>Login Cliente</title>
 </head>
 <body>
 	<f:view>

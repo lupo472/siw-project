@@ -10,7 +10,7 @@
 	<f:view>
 		<h1>Errore Ordine</h1>
 		<p>
-			<strong>l'id inserito non corrisponde a nessun ordine.</strong> 
+			<strong>Attenzione: dati immessi non validi, riprova.</strong> 
 		</p>
 		<h:form>
 			<ul>

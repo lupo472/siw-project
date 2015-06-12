@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Admin Home</title>
+<title>Pannello di amministrazione</title>
 </head>
 <body>
 	<f:view>

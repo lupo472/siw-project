@@ -85,11 +85,9 @@ public class CustomerOrderCreateController {
 	private List<Product> products;
 	
 	public String createOrderLine(){
-		try{
-			this.productFound = this.product_facade.getProduct(code);
-		}
-		catch(Exception e){
-			return "createOrder";
+		this.productFound = this.product_facade.getProduct(code);
+		if(this.productFound==null){
+			return "erroreProdottoNonTrovato";
 		}
 		this.unitPrice  = this.productFound.getPrice();
 		this.orderLine = new OrderLine(unitPrice, quantity);
@@ -110,6 +108,9 @@ public class CustomerOrderCreateController {
 	}
 	
 	public String createOrder(){
+		if(this.orderLines==null || this.orderLines.isEmpty()){
+			return "erroreOrdineNonValido";
+		}
 		this.customer = this.customerController.getCustomer();
 		this.order = this.order_facade.createOrder(customer, orderLines, creationTime, new Date());
 		if(this.order!=null){

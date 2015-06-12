@@ -10,7 +10,7 @@
 	<f:view>
 		<h1>Errore Ordine</h1>
 		<p>
-			<strong>l'id inserito non corrisponde a nessun ordine.</strong> 
+			<strong>il codice inserito non corrisponde a nessun prodotto.</strong> 
 		</p>
 		<h:form>
 			<ul>
@@ -20,3 +20,4 @@
 		</h:form>
 	</f:view>
 </body>
+</html>

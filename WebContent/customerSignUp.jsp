@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Pagina di Registrazione</title>
+<title>Registrazione nuovo cliente</title>
 </head>
 <body>
 
