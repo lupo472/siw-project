@@ -17,7 +17,7 @@
 		<li>In stock: ${productController.product.inStock }</li>
 		</ul>
 		<h:form>
-		<h:commandButton action="#{productController.listProducts }" value="Torna indietro"/>
+		<h:commandButton action="#{productController.getBackToProducts}" value="Torna indietro"/>
 		</h:form>
 	</f:view>
 </body>

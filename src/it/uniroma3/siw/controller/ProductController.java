@@ -14,6 +14,9 @@ import javax.faces.bean.RequestScoped;
 @RequestScoped
 public class ProductController{
 	
+	@ManagedProperty(value="#{checkLogController}")
+	private CheckLogController checkLogController;
+	
 	@EJB
 	private ProductFacade product_facade;
 	
@@ -32,23 +35,39 @@ public class ProductController{
 
 	public String listProducts(){
 		this.products = product_facade.getAllProducts();
+		this.checkLogController.setValue(0);
 		return "listaProdotti";
 	}
 	
 	public String listProductsAdmin(){
 		this.products = product_facade.getAllProducts();
+		this.checkLogController.setValue(1);
 		return "listaProdottiAdmin";
 	}
 	public String listProductsCustomer(){
 		this.products = product_facade.getAllProducts();
+		this.checkLogController.setValue(2);
 		return "listaProdottiCliente";
 	}
 	
+	public String getBackToProducts(){
+		if(this.checkLogController.getValue()==0){
+			return listProducts();
+		}
+		else if(this.checkLogController.getValue()==1){
+			return listProductsAdmin();
+		}
+		else if(this.checkLogController.getValue()==2){
+			return listProductsCustomer();
+		}
+		else return null;
+	}
+		
 	public String findProduct(){
 		this.product = product_facade.getProduct(id);
 		return "mostraProdotto";
+
 	}
-	
 	
 	public String findProduct(Long id) {
 		this.product = product_facade.getProduct(id);
@@ -59,6 +78,7 @@ public class ProductController{
 		this.product = product_facade.getProduct(code);
 		return;
 	}
+	
 	public String getName() {
 		return name;
 	}
@@ -121,6 +141,14 @@ public class ProductController{
 	
 	public void setProducts(List<Product> products) {
 		this.products = products;
+	}
+
+	public CheckLogController getCheckLogController() {
+		return checkLogController;
+	}
+
+	public void setCheckLogController(CheckLogController checkLogController) {
+		this.checkLogController = checkLogController;
 	}
 	
 }

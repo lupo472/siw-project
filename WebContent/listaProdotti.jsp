@@ -22,7 +22,7 @@
 				</c:forEach>
 			</ol>
 			<div>
-				<h:commandButton value="Torna alla home" action="index.jsp" />
+				<h:commandButton value="Torna indietro" action="index.jsp" />
 			</div>
 		</h:form>
 	</f:view>
