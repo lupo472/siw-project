@@ -14,7 +14,7 @@
 		</p>
 		<h:form>
 			<ul>
-		<li><h:commandButton value="Torna indietro" action="#{customerSignUPController.signUp}"/></li>
+		<li><h:commandButton value="Torna indietro" action="customerSignUp"/></li>
 			</ul>
 		</h:form>
 	</f:view>
