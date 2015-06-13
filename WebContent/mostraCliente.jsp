@@ -18,13 +18,13 @@
 				${orderController.customer.registrationDate}</li>
 			<li>Indirizzo:</li>
 		</ul>
-		<div>      Via: ${orderController.customer.address.street}</div>
-		<div>      Citta': ${orderController.customer.address.city}</div>
-		<div>      Regione: ${orderController.customer.address.state}</div>
-		<div>      Paese: ${orderController.customer.address.country}</div>
-		<div>      ZipCode: ${orderController.customer.address.zipCode}</div>
+		<div>Via: ${orderController.customer.address.street}</div>
+		<div>Citta': ${orderController.customer.address.city}</div>
+		<div>Regione: ${orderController.customer.address.state}</div>
+		<div>Paese: ${orderController.customer.address.country}</div>
+		<div>ZipCode: ${orderController.customer.address.zipCode}</div>
 		<h:form>
-			<h:commandButton action="#{orderController.retrieveCustomer}"
+			<h:commandButton action="inserisciIdOrdine.jsp"
 				value="Torna indietro" />
 		</h:form>
 	</f:view>

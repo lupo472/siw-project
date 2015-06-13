@@ -22,7 +22,7 @@
 				</c:forEach>
 			</ol>
 			<ul>
-				<li><h:commandButton value="Torna alla home"
+				<li><h:commandButton value="Torna al pannello amministrazione"
 						action="administratorHome.jsp" /></li>
 			</ul>
 		</h:form>

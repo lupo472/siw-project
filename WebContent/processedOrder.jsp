@@ -17,6 +17,8 @@
 			<ul>
 				<li><h:commandButton value="Evadi un altro ordine"
 						action="#{orderController.retrieveAllNotProcessedOrders}" /></li>
+				<li><h:commandButton value="Torna alla Home"
+						action="administratorHome.jsp" /></li>
 			</ul>
 		</h:form>
 	</f:view>

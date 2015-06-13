@@ -4,21 +4,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Pannello amministrazione</title>
+<title>Errore</title>
 </head>
 <body>
 	<f:view>
-		<h1>Ordine sospeso</h1>
+		<h1>Errore Ordine</h1>
 		<p>
-			<strong>Alcuni prodotti non sono presenti in magazzino nella quantita' specificata dall'ordine ${orderController.id}. </strong>
-			<strong>L'ordine e' stato sospeso.</strong>
+			<strong>Attenzione: non è stato trovato nessun cliente corrispondente al codice ordine ${orderController.id}</strong> 
 		</p>
 		<h:form>
 			<ul>
 				<li><h:commandButton value="Torna indietro"
-						action="#{orderController.retrieveAllNotProcessedOrders}" /></li>
+						action="inserisciIdOrdine.jsp" /></li>
 			</ul>
 		</h:form>
 	</f:view>
 </body>
-</html>

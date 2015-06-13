@@ -18,8 +18,12 @@
 			</div>
 
 			<div>
-				<h:commandButton value="Submit"
+				<h:commandButton value="Cerca Cliente"
 					action="#{orderController.retrieveCustomer}" />
+			</div>
+			<div>
+				<h:commandButton value="Annulla" action="#{orderController.discardRetrieveCustomer}"
+					immediate="true" />
 			</div>
 		</h:form>
 	</f:view>

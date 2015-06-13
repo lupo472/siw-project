@@ -8,24 +8,30 @@
 </head>
 <body>
 	<f:view>
-	<h:form>
-		<h1>Inserisci i tuoi dati</h1> 
-    <div>Email: <h:inputText value="#{administratorController.email}" 
-                     required="true"
-                     requiredMessage="Email obbligatoria"
-                     id="email"/> <h:message for="email" />
-	</div>
-    <div>Password: <h:inputSecret value="#{administratorController.password}" 
-                     required="true"
-                     requiredMessage="Password obbligatoria"
-                     
-                     id="password"/> <h:message for="password" />
-	</div>
-		<div>
-			<h:commandButton value="Submit"
-				action="#{administratorController.administratorLogin}" />
-		</div>
-	</h:form>
+		<h:form>
+			<h1>Inserisci i tuoi dati</h1>
+			<div>
+				Email:
+				<h:inputText value="#{administratorController.email}"
+					required="true" requiredMessage="Email obbligatoria" id="email" />
+				<h:message for="email" />
+			</div>
+			<div>
+				Password:
+				<h:inputSecret value="#{administratorController.password}"
+					required="true" requiredMessage="Password obbligatoria"
+					id="password" />
+				<h:message for="password" />
+			</div>
+			<div>
+				<h:commandButton value="Login"
+					action="#{administratorController.administratorLogin}" />
+			</div>
+			<div>
+				<h:commandButton value="Annulla" action="#{administratorController.administratorLogout}"
+					immediate="true" />
+			</div>
+		</h:form>
 	</f:view>
 </body>
 </html>

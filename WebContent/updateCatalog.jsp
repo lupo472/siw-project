@@ -108,6 +108,11 @@
 				<h:commandButton value="Salva prodotto"
 					action="#{updateCatalogController.createProduct}" />
 			</div>
+			<div>
+				<h:commandButton value="Annulla"
+					action="#{updateCatalogController.discardCreationProduct}"
+					immediate="true" />
+			</div>
 		</h:form>
 	</f:view>
 </body>

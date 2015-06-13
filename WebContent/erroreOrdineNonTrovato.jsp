@@ -15,7 +15,7 @@
 		<h:form>
 			<ul>
 				<li><h:commandButton value="Torna indietro"
-						action="createOrder.jsp" /></li>
+						action="#{orderController.retrieveAllNotProcessedOrders}" /></li>
 			</ul>
 		</h:form>
 	</f:view>

@@ -87,6 +87,12 @@ public class UpdateCatalogController {
 			return "updateCatalog";
 
 	}
+	
+	public String discardCreationProduct(){
+		svuotaCampi();
+		return "administratorHome";
+		
+	}
 
 	private void svuotaCampi(){
 		//cancellazione dei dati inseriti dopo aver cliccato "aggiungi provider"

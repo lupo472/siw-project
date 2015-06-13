@@ -21,10 +21,9 @@
 					</li>
 				</c:forEach>
 			</ol>
-			<ul>
-				<li><h:commandButton value="Torna alla home"
-						action="index.jsp" /></li>
-			</ul>
+			<div>
+				<h:commandButton value="Torna alla home" action="index.jsp" />
+			</div>
 		</h:form>
 	</f:view>
 </body>

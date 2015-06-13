@@ -58,6 +58,13 @@ public class OrderController {
 		return "ElencoOrdiniCliente";
 	}
 	
+	public String discardProcessOrder(){
+		this.order=null;
+		this.processingDate=null;
+		this.orderlines=null;
+		return "administratorHome";
+	}
+	
 	public String processOrder(){
 		if(this.processingDate!=null){
 			return "processOrder";
@@ -115,8 +122,14 @@ public class OrderController {
 			return "mostraCliente";
 		}
 		catch(NullPointerException e){
-			return "inserisciIdOrdine";
+			return "erroreClienteNonTrovato";
 		}		
+	}
+	
+	public String discardRetrieveCustomer(){
+		this.order=null;
+		this.customer=null;
+		return "administratorHome";
 	}
 	
 	public String retrieveAllOrders(){

@@ -83,6 +83,22 @@ public class CustomerController{
 			return "customerSignUp";
 		}
 	}
+	
+	public String discardSignUp(){
+		this.customer=null;
+		this.firstName=null;
+		this.lastName=null;
+		this.email = null;
+		this.password = null;
+		this.address=null;
+		this.dateOfBirth=null;
+		this.registrationDate=null;
+		this.city=null;
+		this.country=null;
+		this.state=null;
+		this.zipCode=0;
+		return "index";
+	}
 
 	public Customer getCustomer() {
 		return customer;

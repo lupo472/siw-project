@@ -20,7 +20,7 @@
 		<h:form>
 			<ul>
 				<li><h:commandButton value="Login" action="customerLogin" /></li>
-				<li><h:commandButton value="Login Admin"
+				<li><h:commandButton value="Admin Login"
 						action="#{administratorController.administratorLogin }" /></li>
 				<li><h:commandButton value="Registrati"
 						action="#{customerController.signUp}" /></li>

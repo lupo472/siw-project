@@ -107,6 +107,14 @@ public class CustomerOrderCreateController {
 		return "createOrder";
 	}
 	
+	public String discardOrder(){
+		this.order=null;
+		this.orderLines.clear();
+		this.quantity=null;
+		this.code=null;
+		return "customerHome";
+	}
+	
 	public String createOrder(){
 		if(this.orderLines==null || this.orderLines.isEmpty()){
 			return "erroreOrdineNonValido";
@@ -116,6 +124,9 @@ public class CustomerOrderCreateController {
 		if(this.order!=null){
 			System.out.println("ordine creato");
 			this.orderLines.clear();
+			this.order=null;
+			this.code=null;
+			this.quantity=null;
 		}
 		return "customerHome";
 	}

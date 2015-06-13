@@ -9,24 +9,30 @@
 </head>
 <body>
 	<f:view>
-	<h:form>
-		<h1>Inserisci i tuoi dati</h1> 
-    <div>Email: <h:inputText value="#{customerController.email}" 
-                     required="true"
-                     requiredMessage="Email obbligatoria"
-                     id="email"/> <h:message for="email" />
-	</div>
-    <div>Password: <h:inputSecret value="#{customerController.password}" 
-                     required="true"
-                     requiredMessage="Password obbligatoria"
-                     
-                     id="password"/> <h:message for="password" />
-	</div>
-		<div>
-			<h:commandButton value="Submit"
-				action="#{customerController.customerLogin}" />
-		</div>
-	</h:form>
+		<h:form>
+			<h1>Inserisci i tuoi dati</h1>
+			<div>
+				Email:
+				<h:inputText value="#{customerController.email}" required="true"
+					requiredMessage="Email obbligatoria" id="email" />
+				<h:message for="email" />
+			</div>
+			<div>
+				Password:
+				<h:inputSecret value="#{customerController.password}"
+					required="true" requiredMessage="Password obbligatoria"
+					id="password" />
+				<h:message for="password" />
+			</div>
+			<div>
+				<h:commandButton value="Login"
+					action="#{customerController.customerLogin}" />
+			</div>
+			<div>
+				<h:commandButton value="Annulla" action="#{customerController.customerLogout}"
+					immediate="true" />
+			</div>
+		</h:form>
 	</f:view>
 
 </body>

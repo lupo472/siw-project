@@ -14,10 +14,17 @@
 		<h:form>
 			<ol>
 				<c:forEach var="orderline" items="${orderController.orderlines}">
-				<li>Id : ${orderline.id} - Prezzo per unita': ${orderline.unitPrice} - Quantita' : ${orderline.quantity} </li>
+					<li>Id : ${orderline.id} - Prezzo per unita':
+						${orderline.unitPrice} - Quantita' : ${orderline.quantity}</li>
 				</c:forEach>
 			</ol>
-			<!-- Mancano i bottoni torna alla HOME -->
+			<div>
+				<h:commandButton value="Indietro"
+					action="#{orderController.listOrders}" />
+			</div>
+			<div>
+				<h:commandButton value="Torna alla home" action="customerHome.jsp" />
+			</div>
 		</h:form>
 	</f:view>
 </body>

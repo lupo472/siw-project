@@ -9,7 +9,7 @@
 </head>
 <body>
 	<f:view>
-		<h1>Processa ordine</h1>
+		<h1>Evadi ordine</h1>
 		<h:form>
 			<ol>
 				<c:forEach var="order" items="${orderController.orders}">
@@ -25,8 +25,12 @@
 			</div>
 
 			<div>
-				<h:commandButton value="Submit"
+				<h:commandButton value="Evadi ordine"
 					action="#{orderController.processOrder}" />
+			</div>
+			<div>
+				<h:commandButton value="Annulla" action="#{orderController.discardProcessOrder}"
+					immediate="true" />
 			</div>
 		</h:form>
 	</f:view>
