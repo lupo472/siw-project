@@ -876,6 +876,8 @@ if (typeof jQuery === 'undefined') {
 
   $.fn.dropdown             = Plugin
   $.fn.dropdown.Constructor = Dropdown
+  
+  $('.dropdown-toggle').dropdown();
 
 
   // DROPDOWN NO CONFLICT

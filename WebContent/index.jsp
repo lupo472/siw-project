@@ -9,6 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"> </script>
+
 <!-- Bootstrap -->
 <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
 <!-- Bootstrap -->
@@ -30,7 +33,7 @@
 				<div class="collapse navbar-collapse"
 					id="bs-example-navbar-collapse-1">
 
-					<div class="navbar-header">
+					<div class="navbar-header" >
 						<a class="navbar-brand" href="#"> <img alt="Brand"
 							src="./sourcefiles/hb_logo.png"
 							style="width: 37px; height: 37px;" align="left">
@@ -40,18 +43,31 @@
 						<ul class="nav navbar-nav">
 							<li class="active"><a href="about.jsp">About <span
 									class="sr-only">(current)</span></a></li>
-							<li><h:commandLink 
+							<li><h:commandLink
 									action="#{productController.listProducts}">Catalogo Prodotti</h:commandLink></li>
 						</ul>
+
 						<ul class="nav navbar-nav navbar-right">
-							<li><a href="administratorLogin.jsp"><button
-										type="button" class="btn btn-default navbar-btn">Login
-										Amministratore</button></a></li>
-							<li><a href="customerLogin.jsp"><button type="button"
-										class="btn btn-default navbar-btn">Login Utente</button></a></li>
+
+							<li class="btn-group">
+							<li class="dropdown">
+								<button class="btn btn-default dropdown-toggle" type="button"
+									id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+									Login<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" role="menu"
+									aria-labelledby="dropdownMenu1">
+									<li role="presentation"><a role="menuitem" tabindex="-1"
+										href="customerLogin.jsp">Login cliente</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1"
+										href="administratorLogin.jsp">Login amministratore</a></li>
+								</ul>
+							</li>
+
 							<li><a href="customerSignUp.jsp"><button type="button"
 										class="btn btn-default navbar-btn">Registrazione</button></a></li>
 						</ul>
+
 					</h:form>
 				</div>
 				<!-- /.navbar-collapse -->
