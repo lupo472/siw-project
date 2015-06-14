@@ -55,6 +55,7 @@
 			</div>
 			<!-- /.container-fluid -->
 		</nav>
+<<<<<<< HEAD
 		<div>
 			<h1>Prodotti presenti nel catalogo</h1>
 			<h:form>
@@ -70,6 +71,20 @@
 				</ol>
 			</h:form>
 		</div>
+
+		<h1>Prodotti presenti nel catalogo</h1>
+		<h:form>
+			<ul class="list-group">
+				<c:forEach var="product" items="#{productController.products }">
+					<li class="list-group-item">Nome: <h:commandLink
+							action="#{productController.findProduct}" value="#{product.name}">
+							<f:param name="id" value="#{product.id}" />
+						</h:commandLink> - Prezzo: ${product.price}
+					</li>
+				</c:forEach>
+			</ul>
+		</h:form>
+
 	</f:view>
 </body>
 </html>

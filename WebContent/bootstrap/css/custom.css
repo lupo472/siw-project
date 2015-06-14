@@ -129,4 +129,24 @@
 h1 {
 	padding-left: 10px;
 }
+
+.list-group{
+	margin:auto;
+	padding-right: 800px;
+	padding-left: 10px;
+
+}
+
+.list-group .list-group-item{
+	margin-right: auto;
+	margin-left:  10px;
+	border-left-width:thick;
+	border-left-color:#132e61;
+	padding-left: 10px;
+	color: #132e61;
+	
+}
+
+
+}
 }
