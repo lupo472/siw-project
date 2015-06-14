@@ -57,15 +57,15 @@
 
 		<h1>Prodotti presenti nel catalogo</h1>
 		<h:form>
-			<ol>
+			<ul class="list-group">
 				<c:forEach var="product" items="#{productController.products }">
-					<li>Nome: <h:commandLink
+					<li class="list-group-item">Nome: <h:commandLink
 							action="#{productController.findProduct}" value="#{product.name}">
 							<f:param name="id" value="#{product.id}" />
 						</h:commandLink> - Prezzo: ${product.price}
 					</li>
 				</c:forEach>
-			</ol>
+			</ul>
 		</h:form>
 	</f:view>
 </body>
