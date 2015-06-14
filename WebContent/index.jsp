@@ -13,6 +13,7 @@
 <!-- Bootstrap -->
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <!-- Bootstrap theme -->
+	<!-- / margin: .67em 0; -->
 <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
 <!-- CUSTOM theme -->
 <link href="bootstrap/css/custom.css" rel="stylesheet" type="text/css">
@@ -58,7 +59,7 @@
 		<div id="index_img">
 			<div align="center">
 				<a href="#"> <img alt="Brand"
-					src="./sourcefiles/image_index.png" align="middle">
+					src="./sourcefiles/index_image.png" align="middle">
 				</a>
 			</div>
 		</div>

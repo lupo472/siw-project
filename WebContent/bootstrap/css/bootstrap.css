@@ -85,8 +85,12 @@ dfn {
 	font-style: italic;
 }
 
+div {
+	padding:20px;
+}
+
 h1 {
-	margin: .67em 0;
+	margin-left: 20px;
 	font-size: 2em;
 }
 
