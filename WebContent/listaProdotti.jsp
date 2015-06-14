@@ -16,7 +16,7 @@
 <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
 <!-- CUSTOM theme -->
 <link href="bootstrap/css/custom.css" rel="stylesheet" type="text/css">
-<title>Lista Prodotti</title>
+<title>Catalogo Prodotti</title>
 </head>
 <body>
 	<f:view>
