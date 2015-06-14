@@ -40,7 +40,7 @@
 						<ul class="nav navbar-nav">
 							<li class="active"><a href="about.jsp">About <span
 									class="sr-only">(current)</span></a></li>
-							<li><h:commandLink
+							<li><h:commandLink 
 									action="#{productController.listProducts}">Catalogo Prodotti</h:commandLink></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">

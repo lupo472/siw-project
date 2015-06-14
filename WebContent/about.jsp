@@ -58,7 +58,6 @@
 		<div >
 			<h1>About Hitech Buddy</h1>
 		</div>
-
 		<div id="about_img">
 			<div align="center">
 				<a href="#"> <img alt="Brand" src="./sourcefiles/about_logo.png"
