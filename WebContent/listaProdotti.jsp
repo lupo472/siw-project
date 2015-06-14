@@ -9,7 +9,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
+<!-- Bootstrap -->
+<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
 <!-- Bootstrap -->
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <!-- Bootstrap theme -->
@@ -54,19 +55,21 @@
 			</div>
 			<!-- /.container-fluid -->
 		</nav>
-
-		<h1>Prodotti presenti nel catalogo</h1>
-		<h:form>
-			<ol>
-				<c:forEach var="product" items="#{productController.products }">
-					<li>Nome: <h:commandLink
-							action="#{productController.findProduct}" value="#{product.name}">
-							<f:param name="id" value="#{product.id}" />
-						</h:commandLink> - Prezzo: ${product.price}
-					</li>
-				</c:forEach>
-			</ol>
-		</h:form>
+		<div>
+			<h1>Prodotti presenti nel catalogo</h1>
+			<h:form>
+				<ol>
+					<c:forEach var="product" items="#{productController.products }">
+						<li>Nome: <h:commandLink
+								action="#{productController.findProduct}"
+								value="#{product.name}">
+								<f:param name="id" value="#{product.id}" />
+							</h:commandLink> - Prezzo: ${product.price}
+						</li>
+					</c:forEach>
+				</ol>
+			</h:form>
+		</div>
 	</f:view>
 </body>
 </html>

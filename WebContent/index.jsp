@@ -9,11 +9,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
+<!-- Bootstrap -->
+<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
 <!-- Bootstrap -->
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <!-- Bootstrap theme -->
-	<!-- / margin: .67em 0; -->
+<!-- / margin: .67em 0; -->
 <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
 <!-- CUSTOM theme -->
 <link href="bootstrap/css/custom.css" rel="stylesheet" type="text/css">
@@ -28,12 +29,13 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse"
 					id="bs-example-navbar-collapse-1">
-					
-				<div class="navbar-header">
-					<a class="navbar-brand" href="#"> <img alt="Brand"
-						src="./sourcefiles/hb_logo.png" style="width: 37px; height: 37px;" align="left">
-					</a>
-				</div>
+
+					<div class="navbar-header">
+						<a class="navbar-brand" href="#"> <img alt="Brand"
+							src="./sourcefiles/hb_logo.png"
+							style="width: 37px; height: 37px;" align="left">
+						</a>
+					</div>
 					<h:form>
 						<ul class="nav navbar-nav">
 							<li class="active"><a href="about.jsp">About <span
@@ -56,11 +58,12 @@
 			</div>
 			<!-- /.container-fluid -->
 		</nav>
-		<div id="index_img">
-			<div align="center">
-				<a href="#"> <img alt="Brand"
-					src="./sourcefiles/index_image.png" align="middle">
-				</a>
+		<div align="center">
+			<h1>Benvenuto in Hitech Buddy</h1>
+			<div id="index_img">
+					<a href="#"> <img alt="Brand"
+						src="./sourcefiles/index_image.png" align="middle">
+					</a>
 			</div>
 		</div>
 	</f:view>

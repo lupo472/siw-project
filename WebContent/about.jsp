@@ -9,7 +9,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
+<!-- Bootstrap -->
+<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
 <!-- Bootstrap -->
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <!-- Bootstrap theme -->
@@ -55,7 +56,7 @@
 			<!-- /.container-fluid -->
 		</nav>
 		<div >
-			<h1>  Hitech Buddy</h1>
+			<h1>About Hitech Buddy</h1>
 		</div>
 
 		<div id="about_img">
@@ -68,7 +69,7 @@
 		</div>
 		<div class="well" align="center">
 			Hitech Buddy è un sito di e-commerce specializzato in elettronica e
-			prodotti hitech delle migliori marche.<BR> Ci rivolgiamo solo ai
+			prodotti hi tech delle migliori marche.<BR> Ci rivolgiamo solo ai
 			migliori fornitori italiani e internazionali per garantire qualità e
 			prezzi bassi a tutti i nostri clienti.
 		</div>
