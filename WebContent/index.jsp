@@ -35,7 +35,7 @@
 				</div>
 					<h:form>
 						<ul class="nav navbar-nav">
-							<li class="active"><a href="#">About <span
+							<li class="active"><a href="about.jsp">About <span
 									class="sr-only">(current)</span></a></li>
 							<li><h:commandLink
 									action="#{productController.listProducts}">Catalogo Prodotti</h:commandLink></li>
@@ -62,24 +62,6 @@
 				</a>
 			</div>
 		</div>
-		<!-- 					<p> -->
-		<!-- 						<strong>Scegli un operazione </strong> -->
-		<!-- 					</p> -->
-		<!-- 					<p> -->
-		<!-- 						<strong>Registrati o accedi al portale se vuoi effettuare -->
-		<!-- 							un ordine!</strong> -->
-		<!-- 					</p> -->
-		<%-- 					<h:form> --%>
-		<!-- 						<ul> -->
-		<%-- 							<li><h:commandButton value="Login" action="customerLogin" /></li> --%>
-		<%-- 							<li><h:commandButton value="Admin Login" --%>
-		<%-- 									action="#{administratorController.administratorLogin }" /></li> --%>
-		<%-- 							<li><h:commandButton value="Registrati" --%>
-		<%-- 									action="#{customerController.signUp}" /></li> --%>
-		<%-- 							<li><h:commandButton value="Catalogo prodotti" --%>
-		<%-- 									action="#{productController.listProducts}" /></li> --%>
-		<!-- 						</ul> -->
-		<%-- 					</h:form> --%>
 	</f:view>
 </body>
 </html>
