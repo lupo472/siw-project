@@ -3,6 +3,8 @@
 .navbar-customblue {
   background-color: #183978;
   border-color: #132e61;
+
+  margin-bottom: 22px;
 }
 .navbar-customblue .navbar-brand {
   color: #dddddd;
@@ -16,6 +18,8 @@
 }
 .navbar-customblue .navbar-nav > li > a {
   color: #dddddd;
+  padding-top: 22px;
+  padding-bottom: inherit;
 }
 .navbar-customblue .navbar-nav > li > a:hover, .navbar-customblue .navbar-nav > li > a:focus {
   color: #ffffff;
@@ -37,6 +41,8 @@
 .navbar-customblue .navbar-nav > .active > a, .navbar-customblue .navbar-nav > .active > a:hover, .navbar-customblue .navbar-nav > .active > a:focus {
   color: #ffffff;
   background-color: #132e61;
+  padding-top: 22px;
+  padding-bottom: 22px;
 }
 .navbar-customblue .navbar-nav > .open > a, .navbar-customblue .navbar-nav > .open > a:hover, .navbar-customblue .navbar-nav > .open > a:focus {
   color: #ffffff;
@@ -70,7 +76,7 @@
 }
 
 .navbar-customblue .navbar-btn {
-	margin-top: auto;
+	margin-top : auto;
 	margin-bottom: auto;
 }
 
