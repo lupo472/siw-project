@@ -38,7 +38,7 @@
 							<li class="active"><a href="about.jsp">About <span
 									class="sr-only">(current)</span></a></li>
 							<li><h:commandLink
-									action="#{productController.listProducts}">Catalogo Prodotti</h:commandLink></li>
+									action="#{productController.listProducts}"><button type="button" class="btn btn-default navbar-btn">Catalogo Prodotti</button></h:commandLink></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="administratorLogin.jsp"><button
