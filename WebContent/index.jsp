@@ -30,7 +30,7 @@
 					
 				<div class="navbar-header">
 					<a class="navbar-brand" href="#"> <img alt="Brand"
-						src="./sourcefiles/hb_logo.png" style="width: 50px; height: 50px;" align="left">
+						src="./sourcefiles/hb_logo.png" style="width: 37px; height: 37px;" align="left">
 					</a>
 				</div>
 					<h:form>
@@ -38,7 +38,7 @@
 							<li class="active"><a href="about.jsp">About <span
 									class="sr-only">(current)</span></a></li>
 							<li><h:commandLink
-									action="#{productController.listProducts}"><button type="button" class="btn btn-default navbar-btn">Catalogo Prodotti</button></h:commandLink></li>
+									action="#{productController.listProducts}">Catalogo Prodotti</h:commandLink></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="administratorLogin.jsp"><button

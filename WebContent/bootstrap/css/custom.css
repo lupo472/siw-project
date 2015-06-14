@@ -69,6 +69,12 @@
   background-color: #132e61;
 }
 
+.navbar-customblue .navbar-btn {
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+
 @media (max-width: 767px) {
   .navbar-customblue .navbar-nav .open .dropdown-menu > li > a {
     color: #dddddd;
