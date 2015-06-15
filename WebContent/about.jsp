@@ -41,7 +41,7 @@
 					<div class="navbar-header">
 						<a class="navbar-brand" href="#"> <img alt="Brand"
 							src="./sourcefiles/hb_logo.png"
-							style="width: 37px; height: 37px;" align="left">
+							style="width: 45px; height: 45px;" align="left">
 						</a>
 					</div>
 					<h:form>

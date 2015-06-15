@@ -36,9 +36,10 @@
 					<div class="navbar-header" >
 						<a class="navbar-brand" href="#"> <img alt="Brand"
 							src="./sourcefiles/hb_logo.png"
-							style="width: 37px; height: 37px;" align="left">
+							style="width: 45px; height: 45px;" align="left">
 						</a>
 					</div>
+					
 					<h:form>
 						<ul class="nav navbar-nav">
 							<li class="active"><a href="about.jsp">About <span
@@ -46,15 +47,13 @@
 							<li><h:commandLink
 									action="#{productController.listProducts}">Catalogo Prodotti</h:commandLink></li>
 						</ul>
-
+						</h:form>
+						
+					<h:form>
 						<ul class="nav navbar-nav navbar-right">
-
-							<li class="btn-group">
 							<li class="dropdown">
-								<button class="btn btn-default dropdown-toggle" type="button"
-									id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-									Login<span class="caret"></span>
-								</button>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+									Login<span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu"
 									aria-labelledby="dropdownMenu1">
 									<li role="presentation"><a role="menuitem" tabindex="-1"
@@ -63,12 +62,11 @@
 										href="administratorLogin.jsp">Login amministratore</a></li>
 								</ul>
 							</li>
-
 							<li><a href="customerSignUp.jsp"><button type="button"
 										class="btn btn-default navbar-btn">Registrazione</button></a></li>
 						</ul>
-
 					</h:form>
+					
 				</div>
 				<!-- /.navbar-collapse -->
 			</div>
