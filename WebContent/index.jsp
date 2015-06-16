@@ -52,10 +52,6 @@
 					<h:form>
 						<ul class="nav navbar-nav navbar-right">
 							<li class="dropdown">
-								<button class="btn btn-default navbar-btn dropdown-toggle" type="button"
-									id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-									Login<span class="caret"></span>
-								</button>
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
 									Login<span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu"
