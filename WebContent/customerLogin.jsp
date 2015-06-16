@@ -54,8 +54,8 @@
 					</div>
 					<h:form>
 						<ul class="nav navbar-nav navbar-right">
-							<li><a href="index.jsp"><button type="button"
-										class="btn btn-default navbar-btn">Torna Indietro</button></a></li>
+							<li><h:commandLink action="#{customerController.customerLogout}"><button type="button"
+										class="btn btn-default navbar-btn">Torna Indietro</button></h:commandLink></li>
 						</ul>
 					</h:form>
 				</div>
@@ -106,7 +106,7 @@
 				<h:inputText id="inputEmail" styleClass="form-control"
 					value="#{customerController.email}"
 					required="true"  requiredMessage="Email obbligatoria">
-					<h:outputLabel value="Email address" />
+					<h:outputLabel value="Email" />
 				</h:inputText>
 				<h:message for="inputEmail" />
 				</div>
