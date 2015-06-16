@@ -1,6 +1,6 @@
 <%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
 <%@ taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -17,7 +17,7 @@
 </head>
 <body>
 	<f:view>
-	
+
 		<nav class="navbar navbar-customblue">
 
 			<div class="container-fluid">
@@ -28,45 +28,53 @@
 					<div class="navbar-header">
 						<a class="navbar-brand" href="#"> <img alt="Brand"
 							src="./sourcefiles/hb_logo.png"
-							style="width: 37px; height: 37px;" align="left">
+							style="width: 45px; height: 45px;" align="left">
 						</a>
 					</div>
 					<h:form>
-											<ul class="nav navbar-nav">
+						<ul class="nav navbar-nav">
 
 							<li><h:commandLink
-									action="#{productController.listProducts}">Catalogo Prodotti</h:commandLink></li>
+									action="#{productController.listProductsAdmin}">Catalogo Prodotti</h:commandLink></li>
 						</ul>
-					<ul class="nav navbar-nav navbar-right">
-						<li><h:commandLink action="#{administratorController.administratorLogout}"><button
-										type="button" class="btn btn-default navbar-btn">Logout</button></h:commandLink></li>
-					</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li><h:commandLink
+									action="#{administratorController.administratorLogout}">
+									<button type="button" class="btn btn-default navbar-btn">Logout</button>
+								</h:commandLink></li>
+						</ul>
 					</h:form>
 				</div>
 				<!-- /.navbar-collapse -->
 			</div>
 			<!-- /.container-fluid -->
-		</nav>	
-	
-		<h1>Pannello di amministrazione</h1>
-		<p>
-			<strong>Scegli un'operazione</strong>
-		</p>
-		<h:form>
-			<ul>
-				<li><h:commandLink action="updateCatalog">
+		</nav>
+		<div align="center">
+			<h1>Pannello di amministrazione</h1>
+			<p>
+			</p>
+			<h:form>
+				<div>
+					<h:commandLink action="updateCatalog">
 						<button type="button" class="btn btn-default navbar-btn">Aggiorna
 							catalogo</button>
-					</h:commandLink></li>
-				<li><h:commandLink action="inserisciIdOrdine">
+					</h:commandLink>
+				</div>
+				<div>
+					<h:commandLink action="inserisciIdOrdine">
 						<button type="button" class="btn btn-default navbar-btn">Mostra
 							dati cliente</button>
-					</h:commandLink></li>
-				<li><h:commandLink action="#{orderController.retrieveAllNotProcessedOrders}">
-						<button type="button" class="btn btn-default navbar-btn">Evadi un ordine</button>
-					</h:commandLink></li>
-			</ul>
-		</h:form>
+					</h:commandLink>
+				</div>
+				<div>
+					<h:commandLink
+						action="#{orderController.retrieveAllNotProcessedOrders}">
+						<button type="button" class="btn btn-default navbar-btn">Evadi
+							un ordine </button>
+					</h:commandLink>
+				</div>
+			</h:form>
+		</div>
 	</f:view>
 </body>
 </html>

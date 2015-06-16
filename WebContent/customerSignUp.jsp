@@ -66,7 +66,7 @@
 			<!-- /.container-fluid -->
 		</nav>
 		
-		<div class="container">
+		<div class="container" align="center">
 
 			<h:form styleClass="form-signin">
 				<h2 class="form-signin-heading">Inserisci i tuoi dati</h2>

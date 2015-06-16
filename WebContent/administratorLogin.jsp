@@ -64,7 +64,7 @@
 		</nav>
 		
 		<div class="container">
-
+		<h1 align="center">Accedi al pannello di amministrazione</h1>
 			<h:form styleClass="form-signin">
 				<h2 class="form-signin-heading"></h2>
 				<div>

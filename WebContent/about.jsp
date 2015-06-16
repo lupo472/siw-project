@@ -55,7 +55,7 @@
 			</div>
 			<!-- /.container-fluid -->
 		</nav>
-		<div >
+		<div align="center">
 			<h1>About Hitech Buddy</h1>
 		</div>
 		<div id="about_img">
