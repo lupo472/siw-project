@@ -69,14 +69,12 @@
 			<!-- /.container-fluid -->
 		</nav>
 		<h1 align="center">Crea un nuovo ordine</h1>
+		<h2 align="center">Prodotti disponibili</h2>
 		
 		<h:form>
 			<ul class="list-group">
 				<c:forEach var="product" items="#{customerOrderCreateController.products }">
-					<li class="list-group-item">Nome: <h:commandLink
-							action="#{productController.findProduct}" value="#{product.name}">
-							<f:param name="id" value="#{product.id}" />
-						</h:commandLink> - Prezzo: ${product.price}
+					<li class="list-group-item">Nome: ${product.name} - Prezzo: ${product.price} - Codice: ${product.code}
 					</li>
 				</c:forEach>
 			</ul>
