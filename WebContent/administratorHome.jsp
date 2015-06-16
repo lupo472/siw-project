@@ -4,24 +4,67 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap -->
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap theme -->
+<link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+<!-- CUSTOM theme -->
+<link href="bootstrap/css/custom.css" rel="stylesheet" type="text/css">
 <title>Pannello di amministrazione</title>
 </head>
 <body>
 	<f:view>
+	
+		<nav class="navbar navbar-customblue">
+
+			<div class="container-fluid">
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse"
+					id="bs-example-navbar-collapse-1">
+
+					<div class="navbar-header">
+						<a class="navbar-brand" href="#"> <img alt="Brand"
+							src="./sourcefiles/hb_logo.png"
+							style="width: 37px; height: 37px;" align="left">
+						</a>
+					</div>
+					<h:form>
+											<ul class="nav navbar-nav">
+
+							<li><h:commandLink
+									action="#{productController.listProducts}">Catalogo Prodotti</h:commandLink></li>
+						</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><h:commandLink action="#{administratorController.administratorLogout}"><button
+										type="button" class="btn btn-default navbar-btn">Logout</button></h:commandLink></li>
+					</ul>
+					</h:form>
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container-fluid -->
+		</nav>	
+	
 		<h1>Pannello di amministrazione</h1>
 		<p>
 			<strong>Scegli un'operazione</strong>
 		</p>
 		<h:form>
 			<ul>
-				<li><h:commandButton value="Aggiorna catalogo" action="updateCatalog"/></li>
-				<li><h:commandButton value="Mostra dati cliente" action="inserisciIdOrdine"/></li>
-				<li><h:commandButton value="Logout"
-						action="#{administratorController.administratorLogout}" />
-				<li><h:commandButton value="Evadi un ordine"
-						action="#{orderController.retrieveAllNotProcessedOrders}" /></li>
-				<li><h:commandButton value="Catalogo Prodotti"
-						action="#{productController.listProductsAdmin}" /></li>
+				<li><h:commandLink action="updateCatalog">
+						<button type="button" class="btn btn-default navbar-btn">Aggiorna
+							catalogo</button>
+					</h:commandLink></li>
+				<li><h:commandLink action="inserisciIdOrdine">
+						<button type="button" class="btn btn-default navbar-btn">Mostra
+							dati cliente</button>
+					</h:commandLink></li>
+				<li><h:commandLink action="#{orderController.retrieveAllNotProcessedOrders}">
+						<button type="button" class="btn btn-default navbar-btn">Evadi un ordine</button>
+					</h:commandLink></li>
 			</ul>
 		</h:form>
 	</f:view>

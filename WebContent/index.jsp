@@ -51,7 +51,7 @@
 
 							<li class="btn-group">
 							<li class="dropdown">
-								<button class="btn btn-default dropdown-toggle" type="button"
+								<button class="btn btn-default navbar-btn dropdown-toggle" type="button"
 									id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
 									Login<span class="caret"></span>
 								</button>
