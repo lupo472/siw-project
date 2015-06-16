@@ -16,6 +16,9 @@
 
 .navbar-customblue .navbar-brand {
 	color: #dddddd;
+	padding-left: 1px;
+	padding-right: 1px;
+	padding-top: 10px;
 }
 
 .navbar-customblue .navbar-brand:hover, .navbar-customblue .navbar-brand:focus

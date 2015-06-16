@@ -8,7 +8,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
+<!-- Bootstrap -->
+<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
 <!-- Bootstrap -->
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <!-- Bootstrap theme -->
@@ -21,7 +22,6 @@
 	<f:view>
 
 		<nav class="navbar navbar-customblue">
-
 			<div class="container-fluid">
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse"
@@ -30,7 +30,7 @@
 					<div class="navbar-header">
 						<a class="navbar-brand" href="#"> <img alt="Brand"
 							src="./sourcefiles/hb_logo.png"
-							style="width: 37px; height: 37px;" align="left">
+							style="width: 45px; height: 45px;" align="left">
 						</a>
 					</div>
 					<h:form>
