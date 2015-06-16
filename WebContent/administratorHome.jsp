@@ -63,7 +63,7 @@
 					</h:commandLink>
 				</div>
 				<div>
-					<h:commandLink action="inserisciIdOrdine">
+					<h:commandLink action="#{orderController.insertIdOrder}">
 						<button type="button" class="btn btn-default navbar-btn">Mostra
 							dati cliente</button>
 					</h:commandLink>

@@ -143,6 +143,11 @@ public class OrderController {
 		return "processOrder";
 	}
 	
+	private void retrieveAllOrdersP(){
+		this.orders=order_facade.getAllOrders();
+		return;
+	}
+	
 	public String retrieveAllNotProcessedOrders(){
 		List<Order> allOrders = order_facade.getAllOrders();
 		if(allOrders==null || allOrders.isEmpty()){
@@ -165,6 +170,11 @@ public class OrderController {
 		}
 		this.orders = notProcessedOrders;
 		return "processOrder";
+	}
+	
+	public String insertIdOrder(){
+		retrieveAllOrdersP();
+		return "inserisciIdOrdine";
 	}
 
 	public Long getId() {

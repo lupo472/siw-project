@@ -42,7 +42,7 @@
 					</div>
 					<h:form>
 					<ul class="nav navbar-nav navbar-right">
-						<li><h:commandLink action="inserisciIdOrdine.jsp"><button
+						<li><h:commandLink action="#{ orderController.insertIdOrder}"><button
 										type="button" class="btn btn-default navbar-btn">Torna indietro</button></h:commandLink></li>
 					</ul>
 					</h:form>

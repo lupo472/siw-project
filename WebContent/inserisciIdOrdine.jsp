@@ -1,3 +1,4 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
 <%@ taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
@@ -66,6 +67,15 @@
 
 		<h1 align="center">Mostra dati cliente</h1>
 		<h2 align="center">Inserisci l'id di un ordine esistente</h2>
+		
+		<h:form>
+			<ul class="list-group">
+			<c:forEach var="order" items="${orderController.orders}">
+				<li class="list-group-item">Id: ${order.id} - Data apertura:
+					${order.creationTime} - Data chiusura: ${order.closingTime} - Data evasione ${order.processingDate}</li>
+			</c:forEach>
+			</ul>
+		</h:form>
 
 		<div class="container">
 
