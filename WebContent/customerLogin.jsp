@@ -63,39 +63,8 @@
 			</div>
 			<!-- /.container-fluid -->
 		</nav>
-	
-	
-	
-		<!-- 		<div class="container"> -->
-		<%-- 			<h:form> --%>
-		<!-- 				<div class="form-signin"> -->
-		<%-- 					<h2 class="form-signin-heading">Login</h2> --%>
-		<!-- 					<div> -->
-		<!-- 						<label class="sr-only" for="email"></label> -->
-		<%-- 						<h:inputText styleClass="form-control" --%>
-		<%-- 							value="#{customerController.email}" required="true" --%>
-		<%-- 							requiredMessage="Email obbligatoria" id="email"> --%>
-		<%-- 							<h:outputLabel value="Email address"/> --%>
-		<%-- 						</h:inputText> --%>
-		<%-- 						<h:message for="email" /> --%>
-		<!-- 					</div> -->
-		<!-- 					<div> -->
-		<!-- 						<label class="sr-only" for="password"></label> -->
-		<%-- 						<h:inputSecret styleClass="form-control" --%>
-		<%-- 							value="#{customerController.password}" label="Password" --%>
-		<%-- 							required="true" requiredMessage="Password obbligatoria" --%>
-		<%-- 							id="password" /> --%>
-		<%-- 						<h:message for="password" /> --%>
-		<!-- 					</div> -->
-		<!-- 					<div class="checkbox"></div> -->
-		<%-- 					<h:commandLink action="#{customerController.customerLogin}"> --%>
-		<!-- 						<button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button> -->
-		<%-- 					</h:commandLink> --%>
-		<!-- 				</div> -->
-		<%-- 			</h:form> --%>
-		<!-- 		</div> -->
 
-
+		<h1 align="center">Login cliente</h1>
 
 		<div class="container">
 
