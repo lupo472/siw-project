@@ -56,7 +56,7 @@
 			<!-- /.container-fluid -->
 		</nav>
 
-		<h1>Prodotti presenti nel catalogo</h1>
+		<h1 align="center">Prodotti presenti nel catalogo</h1>
 		<h:form>
 			<ul class="list-group">
 				<c:forEach var="product" items="#{productController.products }">

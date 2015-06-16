@@ -9,6 +9,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Bootstrap -->
+<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+<!-- Bootstrap -->
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <!-- Bootstrap theme -->
 <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">

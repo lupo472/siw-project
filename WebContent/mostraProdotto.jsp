@@ -46,7 +46,7 @@
 		</nav>
 		
 		
-<h1>Prodotto selezionato</h1>
+<h1 align="center">Prodotto selezionato</h1>
 		<h:form>
 			<ul class="list-group">
 					<li class="list-group-item">Nome: ${productController.product.name }</li>
