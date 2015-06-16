@@ -47,7 +47,7 @@
 		<h:form>
 			<ul class="list-group">
 					<c:forEach var="orderline" items="${orderController.orderlines}">
-					<li>Id : ${orderline.id} - Prezzo per unita':
+					<li class="list-group-item">Id : ${orderline.id} - Prezzo per unita':
 						${orderline.unitPrice} - Quantita' : ${orderline.quantity}</li>
 				</c:forEach>
 			</ul>
