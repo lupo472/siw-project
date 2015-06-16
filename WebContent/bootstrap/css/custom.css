@@ -154,6 +154,12 @@ h1 {
 	
 }
 
+p {
+	font-size: medium;
+	font-weight: bold;
+	padding-top: 20px;
+}
+
 
 }
 }

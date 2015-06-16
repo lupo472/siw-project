@@ -30,7 +30,6 @@
 
 </body>
 <f:view>
-	<h:form>
 	
 	<nav class="navbar navbar-customblue">
 			<div class="container-fluid">
@@ -96,6 +95,7 @@
 				<h:inputText id="inputDateBirth" styleClass="form-control"
 					value="#{customerController.dateOfBirth}"
 					required="false">
+					<f:convertDateTime pattern="d-M-yyyy" />
 					<h:outputLabel value="Data di nascita" />
 				</h:inputText>
 				</div>
@@ -120,7 +120,7 @@
 				<h:message for="inputEmail" />
 				</div>
 				
-				<div>Dati indirizzo:</div>
+				<p>Dati indirizzo:</p>
 				
 				<div>
 				<label class="sr-only" for="inputStreet"></label>
@@ -260,6 +260,5 @@
 <%-- 			<h:commandButton value="Annulla" action="#{customerController.discardSignUp}" --%>
 <%-- 				immediate="true" /> --%>
 <!-- 		</div> -->
-	</h:form>
 </f:view>
 </html>
