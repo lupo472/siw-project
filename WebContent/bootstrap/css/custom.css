@@ -4,6 +4,7 @@
 	margin-left: 20px;	
 	margin-right: 20px;	
 }
+
 .btn-group {
  margin: 0 auto; 
  text-align: center;
@@ -139,7 +140,7 @@ h1 {
 
 .list-group{
 	margin:auto;
-	padding-right: 800px;
+	padding-right: 30px;
 	padding-left: 10px;
 
 }
@@ -148,8 +149,9 @@ h1 {
 	margin-right: auto;
 	margin-left:  10px;
 	border-left-width:thick;
-	border-left-color:#132e61;
+	border-left-color:#132e61; 
 	padding-left: 10px;
+	padding-right: 10px;
 	color: #132e61;
 	
 }
