@@ -37,7 +37,7 @@ public class OrderController {
 	private Order order;
 	
 	private List<Order> orders;
-	
+		
 	private List<OrderLine> orderlines;
 	
 	@PostConstruct
@@ -145,7 +145,16 @@ public class OrderController {
 	
 	public String retrieveAllNotProcessedOrders(){
 		List<Order> allOrders = order_facade.getAllOrders();
-		if(allOrders==null || allOrders.isEmpty()==true){
+		if(allOrders==null || allOrders.isEmpty()){
+			return "erroreZeroOrdini";
+		}
+		int contaOrdiniNonProcessati=0;
+		for(Order o : allOrders){
+			if(o.getProcessingDate()==null){
+				contaOrdiniNonProcessati++;
+			}
+		}
+		if(contaOrdiniNonProcessati==0){
 			return "erroreZeroOrdini";
 		}
 		List<Order> notProcessedOrders = new ArrayList<Order>();

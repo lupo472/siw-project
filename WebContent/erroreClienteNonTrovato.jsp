@@ -44,7 +44,7 @@
 			<!-- /.container-fluid -->
 		</nav>	
 		<div align="center">
-		<h1>Errore Ordine</h1>
+		<h1>Errore</h1>
 		<div class="alert alert-danger" role="alert">
 			Attenzione: non è stato trovato nessun cliente corrispondente al codice ordine ${orderController.id}
 		</div>
