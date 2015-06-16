@@ -60,7 +60,7 @@
 			</p>
 			<h:form>
 				<div>
-					<h:commandLink action="createOrder">
+					<h:commandLink action="#{customerOrderCreateController.getAllProducts }">
 						<button type="button" class="btn btn-default navbar-btn">Crea un nuovo ordine</button>
 					</h:commandLink>
 				</div>

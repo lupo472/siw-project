@@ -116,6 +116,7 @@ public class CustomerOrderCreateController {
 	}
 	
 	public String createOrder(){
+		
 		if(this.orderLines==null || this.orderLines.isEmpty()){
 			return "erroreOrdineNonValido";
 		}
@@ -129,6 +130,11 @@ public class CustomerOrderCreateController {
 			this.quantity=null;
 		}
 		return "customerHome";
+	}
+	
+	public String getAllProducts(){
+		this.products = this.product_facade.getAllProducts();
+		return "createOrder";
 	}
 	
 	@PostConstruct

@@ -1,6 +1,5 @@
 <%@page import="it.uniroma3.siw.controller.OrderLineController"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
 <%@ taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
 <!DOCTYPE html>
@@ -70,6 +69,23 @@
 			<!-- /.container-fluid -->
 		</nav>
 		<h1 align="center">Crea un nuovo ordine</h1>
+		
+		<h:form>
+			<ul class="list-group">
+				<c:forEach var="product" items="#{customerOrderCreateController.products }">
+					<li class="list-group-item">Nome: <h:commandLink
+							action="#{productController.findProduct}" value="#{product.name}">
+							<f:param name="id" value="#{product.id}" />
+						</h:commandLink> - Prezzo: ${product.price}
+					</li>
+				</c:forEach>
+			</ul>
+		</h:form>
+		
+		
+		
+		
+		
 		<div class="container" align="center">
 
 			<h:form styleClass="form-signin">
