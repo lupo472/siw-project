@@ -66,9 +66,8 @@
 		</nav>
 		
 		<div class="container" align="center">
-
+				<h1 class="form-signin-heading" align="center">Aggiornamento Catalogo</h1>
 			<h:form styleClass="form-signin">
-				<h2 class="form-signin-heading">Aggiornamento Catalogo</h2>
 				
 				<div>
 				<label class="sr-only" for="inputProductName"></label>

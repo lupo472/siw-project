@@ -96,7 +96,7 @@
 					value="#{customerController.dateOfBirth}"
 					required="false">
 					<f:convertDateTime pattern="d-M-yyyy" />
-					<h:outputLabel value="Data di nascita" />
+					<h:outputLabel value="Data di nascita (gg-mm-aaaa)" />
 				</h:inputText>
 				</div>
 				

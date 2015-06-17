@@ -72,7 +72,7 @@
 			<ul class="list-group">
 			<c:forEach var="order" items="${orderController.orders}">
 				<li class="list-group-item">Id: ${order.id} - Data apertura:
-					${order.creationTime} - Data chiusura: ${order.closingTime} - Data evasione ${order.processingDate}</li>
+					${order.creationTime} - Data chiusura: ${order.closingTime} - Data evasione: ${order.processingDate}</li>
 			</c:forEach>
 			</ul>
 		</h:form>
